@@ -1,0 +1,15 @@
+
+.dropdown{
+    transition: 20s;
+}
+
+.dropdown_links:hover .dropdown{
+    /* display: block; */
+    transition: 2s;
+    color: red;
+}
+
+.links:hover{
+    color: rgb(122, 0, 20);
+    cursor: pointer;
+}
