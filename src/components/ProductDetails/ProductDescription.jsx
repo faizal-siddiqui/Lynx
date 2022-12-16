@@ -34,11 +34,12 @@ const ProductDescription = ({ singleData, fetchById }) => {
       ...singleData.reviews, inputReview
     ]
 
-    const response = await axios.patch(`http://localhost:3000/products/${id}`, {
+    const response = await axios.patch(`${process.env.REACT_APP_PRODUCTS}/products/${id}`, {
       reviews: newReviews
     })
     fetchById(id)
     // console.log(response)
+    setInputReview("")
   }
 
 
@@ -48,7 +49,7 @@ const ProductDescription = ({ singleData, fetchById }) => {
       count: singleData.rating.count + 1
     }
 
-    const response = await axios.patch(`http://localhost:3000/products/${id}`, {
+    const response = await axios.patch(`${process.env.REACT_APP_PRODUCTS}/products/${id}`, {
       rating: newRating
     })
     fetchById(id)
@@ -91,7 +92,7 @@ const ProductDescription = ({ singleData, fetchById }) => {
         <RatingBox singleData={singleData} UpdateStar={UpdateStar} />
       </Box>
       <Box m="20px" pb="15px" borderBottom="1px" borderColor="gray.300">
-        <Review setInputReview={setInputReview} AddReviews={AddReviews} singleData={singleData} />
+        <Review setInputReview={setInputReview} AddReviews={AddReviews} singleData={singleData} inputReview={inputReview} />
       </Box>
     </>
   );

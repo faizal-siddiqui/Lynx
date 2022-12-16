@@ -156,7 +156,7 @@
       "name": "Men Beige & Black Typography Printed Sustainable T-shirt",
       "rating": {
         "star": 4,
-        "count": 12900
+        "count": 12902
       },
       "price": 296,
       "mrp": 1099,
@@ -177,7 +177,11 @@
         "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/3e3af82e-a465-46c0-8c52-19e27c063d611576102551460-4.jpg",
         "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/512f9dba-fdc5-4e84-a3bf-a430dc3889821576102551501-5.jpg"
       ],
-      "reviews": [],
+      "reviews": [
+        "Best colour to choose",
+        "Nice product",
+        "Best Buy"
+      ],
       "id": 6
     },
     {
