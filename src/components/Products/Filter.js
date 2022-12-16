@@ -13,10 +13,8 @@ export const filterAdd = (filter, setData) => {
   productsFetch(setData, ans.join("&"));
 };
 
-
 export const PriceFilter = (min, max, setData) => {
 
-  console.log("min")
 }
 
 export const DiscountFilter = (discount, setData) => {

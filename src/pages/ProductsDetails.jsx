@@ -1,9 +1,58 @@
-import React from 'react'
+import { Box } from "@chakra-ui/react";
+import React, { useEffect } from "react";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+import BreadcrumbComponent from "../components/ProductDetails/BreadcrumbComponent";
+import ImagesCompo from "../components/ProductDetails/ImagesCompo";
+import axios from "axios";
+import ProductsDescription from "../components/ProductDetails/ProductDescription"
+import ProductsGrid from "../components/Products/ProductsGrid"
+import LargeWithAppLinksAndSocial from "../components/Footer"
+import IconHeading from "../components/ProductDetails/IconHeading";
 
 const ProductsDetails = () => {
-  return (
-    <div>ProductsDetails</div>
-  )
-}
+const [singleData, setSingleData] = useState({});
 
-export default ProductsDetails
+  const { categ, id } = useParams();
+
+  useEffect(() => {
+    fetchById(id);
+  }, []);
+
+  const setTotalProducts = () => {
+    return
+  }
+
+  const fetchById = async (id) => {
+    try {
+      const response = await axios.get(
+        `${process.env.REACT_APP_PRODUCTS}/products/${id}`
+      );
+      response?.data && setSingleData(response.data);
+    } catch (err) {
+      console.log("err:", err);
+    }
+  };
+
+  return (
+    <Box ml="2.5%" mr="2.5%">
+      <BreadcrumbComponent id={id} categ={categ} singleData={singleData} />
+      {/* Product Details */}
+      <Box display="flex">
+        <Box w={{lg:"60%", md: "60%", sm: "50%"}} mt="30px" >
+          <ImagesCompo singleData={singleData} setSingleData={setSingleData} />
+        </Box>
+        <Box w={{lg:"40%", md: "40%", sm: "50%"}} mt="30px">
+          <ProductsDescription singleData={singleData} fetchById={fetchById} />
+        </Box>
+      </Box>
+      <Box ml="2.5%" mt="40px">
+        <IconHeading headText={"SIMILAR PRODUCTS"} />
+      </Box>
+      <ProductsGrid page={2} limit={20} setTotalProducts={setTotalProducts} />
+      <LargeWithAppLinksAndSocial />
+    </Box>
+  );
+};
+
+export default ProductsDetails;

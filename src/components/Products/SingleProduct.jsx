@@ -28,7 +28,7 @@ const SingleProduct = ({ prod, i }) => {
           prod.carause = false;
         }}
       >
-        <Box>
+        <Box _hover={{boxShadow:"rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;"}} cursor="pointer">
           <Box position="relative">
             <Image src={prod.images[0]} alt={prod.brand} />
             {/* <Box h="30px" display="none" _hover={{display: "block"}}></Box> */}

@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 import DataContextProvider from "./contexts/DataContext";
+// import ProductDetailsContextProvider from "./contexts/ProductDetailsContext";
 // import { theme } from "./Breakpoints/BreakPoints";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -13,9 +14,11 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <ChakraProvider>
-        <DataContextProvider>
-          <App />
-        </DataContextProvider>
+        {/* <ProductDetailsContextProvider> */}
+          <DataContextProvider>
+            <App />
+          </DataContextProvider>
+        {/* </ProductDetailsContextProvider> */}
       </ChakraProvider>
     </BrowserRouter>
   </React.StrictMode>
