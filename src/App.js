@@ -2,12 +2,10 @@ import './App.css';
 import AddData from './admin/AddData';
 import AllRoutes from './Routes/AllRoutes';
 import { Link } from 'react-router-dom';
-import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div>
-      <Navbar />
       <AllRoutes />
     </div>
   );

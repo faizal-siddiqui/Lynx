@@ -9,6 +9,7 @@ import ProductsDescription from "../components/ProductDetails/ProductDescription
 import ProductsGrid from "../components/Products/ProductsGrid"
 import LargeWithAppLinksAndSocial from "../components/Footer"
 import IconHeading from "../components/ProductDetails/IconHeading";
+import Navbar from "../components/Navbar";
 
 const ProductsDetails = () => {
 const [singleData, setSingleData] = useState({});
@@ -35,23 +36,26 @@ const [singleData, setSingleData] = useState({});
   };
 
   return (
-    <Box ml="2.5%" mr="2.5%">
-      <BreadcrumbComponent id={id} categ={categ} singleData={singleData} />
-      {/* Product Details */}
-      <Box display="flex">
-        <Box w={{lg:"60%", md: "60%", sm: "50%"}} mt="30px" >
-          <ImagesCompo singleData={singleData} setSingleData={setSingleData} />
+    <>
+      <Navbar />
+      <Box ml="2.5%" mr="2.5%">
+        <BreadcrumbComponent id={id} categ={categ} singleData={singleData} />
+        {/* Product Details */}
+        <Box display="flex">
+          <Box w={{lg:"60%", md: "60%", sm: "50%"}} mt="30px" >
+            <ImagesCompo singleData={singleData} setSingleData={setSingleData} />
+          </Box>
+          <Box w={{lg:"40%", md: "40%", sm: "50%"}} mt="30px">
+            <ProductsDescription singleData={singleData} fetchById={fetchById} />
+          </Box>
         </Box>
-        <Box w={{lg:"40%", md: "40%", sm: "50%"}} mt="30px">
-          <ProductsDescription singleData={singleData} fetchById={fetchById} />
+        <Box ml="2.5%" mt="40px">
+          <IconHeading headText={"SIMILAR PRODUCTS"} />
         </Box>
+        <ProductsGrid page={2} limit={20} setTotalProducts={setTotalProducts} />
+        <LargeWithAppLinksAndSocial />
       </Box>
-      <Box ml="2.5%" mt="40px">
-        <IconHeading headText={"SIMILAR PRODUCTS"} />
-      </Box>
-      <ProductsGrid page={2} limit={20} setTotalProducts={setTotalProducts} />
-      <LargeWithAppLinksAndSocial />
-    </Box>
+    </>
   );
 };
 

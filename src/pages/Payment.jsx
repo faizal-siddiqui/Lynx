@@ -1,8 +1,12 @@
+import { Box } from '@chakra-ui/react'
 import React from 'react'
+import CartNavbar from '../components/Cart/CartNavbar/CartNavbar'
 
 const Payment = () => {
   return (
-    <div>Payment</div>
+    <Box>
+      <CartNavbar />
+    </Box>
   )
 }
 

@@ -7,7 +7,7 @@
       "name": "Men Blue Solid Polo Collar Pure Cotton T-shirt",
       "rating": {
         "star": 4.4,
-        "count": 566
+        "count": 567
       },
       "price": 399,
       "mrp": 999,
@@ -66,7 +66,7 @@
       "name": "Men Burgundy Solid Polo Collar T-shirt",
       "rating": {
         "star": 4.5,
-        "count": 1500
+        "count": 1501
       },
       "price": 766,
       "mrp": 1299,
@@ -87,7 +87,9 @@
         "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/18221326/2022/6/4/17d5d5c4-1f6c-4ba7-9498-224441fb9fcf1654320478345-Louis-Philippe-Sport-Men-Tshirts-7611654320477824-4.jpg",
         "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/18221326/2022/6/4/f204b069-0fd7-4184-a32f-9215c0ac62541654320478388-Louis-Philippe-Sport-Men-Tshirts-7611654320477824-2.jpg"
       ],
-      "reviews": [],
+      "reviews": [
+        "Nice T shirt"
+      ],
       "id": 3
     },
     {
@@ -177,7 +179,9 @@
         "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/3e3af82e-a465-46c0-8c52-19e27c063d611576102551460-4.jpg",
         "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/512f9dba-fdc5-4e84-a3bf-a430dc3889821576102551501-5.jpg"
       ],
-      "reviews": [],
+      "reviews": [
+        "Best Product"
+      ],
       "id": 6
     },
     {
@@ -1214,23 +1218,28 @@
   "categories": [],
   "profile": [
     {
-      "details": {
-        "name": "",
-        "email": "",
-        "mobile": 0,
-        "gender": "",
-        "birthDate": "",
-        "location": "",
-        "cardDetails": "",
-        "password": "",
-        "cart": []
-      }
-    }
-  ],
-  "reviews": [
-    {
       "id": 1,
-      "xyz": "jhfghgfhftyf"
+      "name": "Faizal Siddiqui",
+      "email": "faizalsidp@gmail.com",
+      "mobile": 7867789867,
+      "gender": "Male",
+      "birthDate": "23-09-2002",
+      "location": "Delhi",
+      "cardDetails": "89878676565441",
+      "password": "Faiz!234",
+      "cart": []
+    },
+    {
+      "id": 2,
+      "name": "Amaan Siddiqui",
+      "email": "amaansidp@gmail.com",
+      "mobile": 7867789867,
+      "gender": "Male",
+      "birthDate": "23-09-2002",
+      "location": "Delhi",
+      "cardDetails": "89878676565441",
+      "password": "Aman!234",
+      "cart": []
     }
   ]
 }
