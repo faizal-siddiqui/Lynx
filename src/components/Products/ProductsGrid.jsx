@@ -19,22 +19,25 @@ import { productsFetch } from "./Filter";
 import { DataContext } from "../../contexts/DataContext";
 import axios from "axios";
 import SkeletonCompo from "./SkeletonCompo";
+import { Link as RouterLink, useParams } from "react-router-dom";
 
 const ProductsGrid = ({ page, limit, setTotalProducts }) => {
   const { data, setData } = useContext(DataContext);
   const [loading, setLoading] = useState(false);
+  const { categ } = useParams();
+
   const productsFetch = async (page) => {
-    setLoading(true)
+    setLoading(true);
     try {
       const response = await axios.get(
         `${process.env.REACT_APP_PRODUCTS}/products?_limit=${limit}&_page=${page}`
       );
       setTotalProducts(response.headers["x-total-count"]);
       setData(response.data);
-      setLoading(false)
+      setLoading(false);
     } catch (err) {
       console.log("err:", err);
-      setLoading(false)
+      setLoading(false);
     }
   };
 
@@ -52,12 +55,19 @@ const ProductsGrid = ({ page, limit, setTotalProducts }) => {
       gap={5}
       mr="20px"
       ml="20px"
+      pt="20px"
+      pb="20px"
     >
-      {
-      loading? <SkeletonCompo /> : data && data.map((prod, i) => (
-        <SingleProduct key={prod.id} prod={prod} i={i} />
-      ))
-      }
+      {loading ? (
+        <SkeletonCompo />
+      ) : (
+        data &&
+        data.map((prod, i) => (
+          <RouterLink to={`/products/${categ}/${prod.id}`}>
+            <SingleProduct key={prod.id} prod={prod} i={i} />
+          </RouterLink>
+        ))
+      )}
     </Grid>
   );
 };

@@ -50,9 +50,11 @@ const SocialButton = ({ children, label, to }) => {
   );
 };
 
-export default function LargeWithAppLinksAndSocial() {
+export default function LargeWithAppLinksAndSocial({limit}) {
+  
   return (
     <Box
+      mt={limit === 10 ? "200px": "40px"}
       bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
     >
