@@ -1,20 +1,8 @@
 import React from "react";
 import { StarIcon } from "@chakra-ui/icons";
 import { Box, Flex, GridItem, Heading, Image, Text } from "@chakra-ui/react";
-import ImageCarausel from "./ImageCarausel";
-import {
-    FilTERBRAND,
-    FilTERPRICE,
-    FILTERDISCOUNT,
-    FilTERRATING,
-  } from "./ProductsData";
 const SingleProduct = ({ prod, i }) => {
 
-    // const brands = FilTERBRAND.filter((el) => {
-    //     return el.isEnable === true
-    // })
-
-    // console.log(brands)
 
   return (
     <>

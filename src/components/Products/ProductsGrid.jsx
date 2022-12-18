@@ -13,37 +13,17 @@ import {
 import React, { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import ImageCarausel from "./ImageCarausel";
+
 import SingleProduct from "./SingleProduct";
-import { productsFetch } from "./Filter";
-import { DataContext } from "../../contexts/DataContext";
+
 import axios from "axios";
 import SkeletonCompo from "./SkeletonCompo";
 import { Link as RouterLink, useParams } from "react-router-dom";
 
-const ProductsGrid = ({ page, limit, setTotalProducts }) => {
-  const { data, setData } = useContext(DataContext);
+const ProductsGrid = ({ data }) => {
+
   const [loading, setLoading] = useState(false);
   const { categ } = useParams();
-
-  const productsFetch = async (page) => {
-    setLoading(true);
-    try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_PRODUCTS}/products?_limit=${limit}&_page=${page}`
-      );
-      setTotalProducts(response.headers["x-total-count"]);
-      setData(response.data);
-      setLoading(false);
-    } catch (err) {
-      console.log("err:", err);
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    productsFetch(page);
-  }, [page, limit]);
 
   return (
     <Grid
