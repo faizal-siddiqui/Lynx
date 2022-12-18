@@ -41,7 +41,7 @@ const SuccessButton = ({
       <Button w="100%" bgColor="#ff3e6c" color="#fff" mt={4} onClick={onOpen}>
         Proceed
       </Button>
-      <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
+      <Modal isOpen={isOpen} >
         <ModalOverlay />
         <ModalContent>
           <ModalHeader textAlign="center">
@@ -63,7 +63,7 @@ const SuccessButton = ({
                 UpdateStar={UpdateStar}
               />
             </Box>
-            <Box m="auto">
+            <Box m="auto" onClose={onClose}>
               <PinkButton
                 width={"100%"}
                 btnText={"Shop More"}

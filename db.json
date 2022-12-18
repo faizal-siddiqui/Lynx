@@ -191,9 +191,7 @@
         "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/3e3af82e-a465-46c0-8c52-19e27c063d611576102551460-4.jpg",
         "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/512f9dba-fdc5-4e84-a3bf-a430dc3889821576102551501-5.jpg"
       ],
-      "reviews": [
-
-      ],
+      "reviews": [],
       "id": 6
     },
     {
@@ -593,7 +591,7 @@
       "name": "Men Blue Printed Pure Cotton T-shirt",
       "rating": {
         "star": 3,
-        "count": 34556
+        "count": 34557
       },
       "price": 449,
       "mrp": 1499,
@@ -616,7 +614,9 @@
         "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/20860502/2022/11/22/67df0e54-13a2-4f27-9495-d84eefbd28bd1669113991942Tshirts1.jpg",
         "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/20860502/2022/11/22/6f3f1e27-7db3-4e3a-9a8a-589b974052f61669113991932Tshirts4.jpg"
       ],
-      "reviews": [],
+      "reviews": [
+        "Best product"
+      ],
       "id": 19
     },
     {
