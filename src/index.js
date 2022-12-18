@@ -8,6 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 import DataContextProvider from "./contexts/DataContext";
 import DeliveryContextProvider from "./contexts/DeliveryContext";
 import ButtonContextProvider from "./contexts/ButtonContext";
+import AuthContextProvider from "./contexts/AuthContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,7 +18,9 @@ root.render(
         <DeliveryContextProvider>
           <DataContextProvider>
             <ButtonContextProvider>
-              <App />
+              <AuthContextProvider>
+                <App />
+              </AuthContextProvider>
             </ButtonContextProvider>
           </DataContextProvider>
         </DeliveryContextProvider>

@@ -1,10 +1,10 @@
 import { Box, Button, Flex } from '@chakra-ui/react'
 import React from 'react'
+import CardFooter from '../components/Cart/CartFooter/CardFooter'
 import CartNavbar from '../components/Cart/CartNavbar/CartNavbar'
 import PriceDetails from '../components/Cart/PriceBox/PriceDetails'
 import PaymentBox from '../components/Payment/PaymentBox'
 import SuccessButton from '../components/Payment/SuccessButton'
-import RateStar from '../components/ProductDetails/RateStar'
 
 const Payment = () => {
   return (
@@ -33,6 +33,9 @@ const Payment = () => {
           <PriceDetails enableBtn={false} newBtn={<SuccessButton />} />
         </Box>
       </Flex>
+      <Box>
+        <CardFooter />
+      </Box>
     </Box>
   )
 }

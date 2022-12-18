@@ -8,6 +8,7 @@ import ProductsDetails from "../pages/ProductsDetails";
 import Cart from "../pages/Cart";
 import Address from "../pages/Address";
 import Payment from "../pages/Payment";
+import PrivateRoute from "./PrivateRoute";
 
 const AllRoutes = () => {
   return (
@@ -15,11 +16,11 @@ const AllRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />
-      <Route path="/products/:categ" element={<Products />} />
-      <Route path="/products/:categ/:id" element={<ProductsDetails />} />
-      <Route path="/cart" element={<Cart />} />
+      <Route path="/products/:categ" element={<PrivateRoute><Products /></PrivateRoute>} />
+      <Route path="/products/:categ/:id" element={<PrivateRoute><ProductsDetails /></PrivateRoute>} />
+      <Route path="/cart" element={<PrivateRoute><Cart /></PrivateRoute>} />
       {/* <Route path="/address" element={<Address />} /> */}
-      <Route path="/payment" element={<Payment />} />
+      <Route path="/payment" element={<PrivateRoute><Payment /></PrivateRoute>} />
     </Routes>
   );
 };

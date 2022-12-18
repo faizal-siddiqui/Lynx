@@ -4,11 +4,9 @@ import axios from "axios";
 export const DeliveryContext = createContext();
 
 const DeliveryContextProvider = ({ children }) => {
-  const [profileId, setProfileId] = useState("");
+  const [profileId, setProfileId] = useState(0);
   const [cart, setCart] = useState([]);
   const [profileData, setProfileData] = useState({});
-  // const [prodSize, setProdSize] = useState(0);
-  // const [prodQty, setProdQty] = useState(0);
 
   const fetchCart = async (
     email = "faizalsidp@gmail.com",

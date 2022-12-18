@@ -22,8 +22,12 @@ import { Link as RouterLink, useParams } from "react-router-dom";
 
 const ProductsGrid = ({ data }) => {
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const { categ } = useParams();
+
+  setTimeout(() => {
+    setLoading(false)
+  },1000)
 
   return (
     <Grid

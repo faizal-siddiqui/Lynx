@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import { Box } from "@chakra-ui/react";
+import Navbar from "../components/Navbar";
+import SignInForm from "../components/SignIn/SignInForm";
 
 const SignIn = () => {
   return (
-    <div>SignIn</div>
-  )
-}
+    <Box>
+      <Navbar />
+      <Box>
+        <SignInForm />
+      </Box>
+    </Box>
+  );
+};
 
-export default SignIn
+export default SignIn;

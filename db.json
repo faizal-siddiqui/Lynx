@@ -428,7 +428,7 @@
       "name": "Men Green Black Colourblocked Polo Collar Pure Cotton T-shirt",
       "rating": {
         "star": 4,
-        "count": 3001
+        "count": 3002
       },
       "price": 649,
       "mrp": 1299,
@@ -1319,7 +1319,112 @@
       "location": "Delhi",
       "cardDetails": "89878676565441",
       "password": "Aman!234",
-      "cart": []
+      "cart": [
+        {
+          "carause": false,
+          "brand": "HRX by Hrithik Roshan",
+          "name": "Men Teal Blue Printed Pure Cotton T-shirt",
+          "rating": {
+            "star": 4.2,
+            "count": 49000
+          },
+          "price": 349,
+          "mrp": 699,
+          "discount": 50,
+          "sizes": "M",
+          "qty": 1,
+          "productDetails": "This season set a sporty fashion trend with the HRX Men's Athleisure T-shirt. This striped casual T-shirt can be worn on its own or layered under a jacket or a hoodie.",
+          "size": "The model (height 6') is wearing a size M",
+          "material": "100% cotton, Machine-wash",
+          "category": "tshirts",
+          "type": "men",
+          "specification": {
+            "fabric": "Pure Cotton",
+            "fit": "Regular Fit",
+            "length": "Regular",
+            "mainTrend": "Geometric Print"
+          },
+          "images": [
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700871/2020/1/22/3d7fa82a-871c-43f9-8aa4-b01fbc77e2921579692117728-HRX-by-Hrithik-Roshan-Men-Teal-Blue-Printed-T-shirt-90515796-6.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700871/2020/1/22/5a6da9ac-d32e-4710-9b6d-569b454560931579692118120-HRX-by-Hrithik-Roshan-Men-Teal-Blue-Printed-T-shirt-90515796-2.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700871/2020/1/22/630076d1-bddd-4bd8-825a-f53a545c38481579692117944-HRX-by-Hrithik-Roshan-Men-Teal-Blue-Printed-T-shirt-90515796-4.jpg"
+          ],
+          "reviews": [],
+          "id": 4
+        }
+      ]
+    },
+    {
+      "id": 3
+    },
+    {
+      "email": "ayansidp@gmail.com",
+      "password": "Ayan!234",
+      "name": "Ayan Siddiqui",
+      "mobile": 0,
+      "gender": "",
+      "birthDate": "",
+      "location": "",
+      "cardDetails": "",
+      "cart": [],
+      "id": 4
+    },
+    {
+      "email": "amaansidp@gmail.com",
+      "password": "Ayan!234",
+      "name": "Ayan siddiqui",
+      "mobile": 0,
+      "gender": "",
+      "birthDate": "",
+      "location": "",
+      "cardDetails": "",
+      "cart": [],
+      "id": 5
+    },
+    {
+      "email": "subhamsidp@gmail.com",
+      "password": "Subh!234",
+      "name": "subham Kumar",
+      "mobile": 0,
+      "gender": "",
+      "birthDate": "",
+      "location": "",
+      "cardDetails": "",
+      "cart": [
+        {
+          "carause": false,
+          "brand": "Huetrap",
+          "name": "Men Beige & Black Typography Printed Sustainable T-shirt",
+          "rating": {
+            "star": 4,
+            "count": 12902
+          },
+          "price": 296,
+          "mrp": 1099,
+          "discount": 73,
+          "sizes": "M",
+          "qty": 1,
+          "productDetails": "Beige and Black printed T-shirt, has a round neck, and short sleeves",
+          "size": "The model (height 6') is wearing a size M",
+          "material": "Material: 52% Cotton 48% Polyester Machine Wash",
+          "category": "tshirts",
+          "type": "men",
+          "specification": {
+            "fabric": "Cotton",
+            "fit": "Regular Fit",
+            "length": "Regular",
+            "mainTrend": "Typography or Slogan Print"
+          },
+          "images": [
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/1aab2a18-6774-4f83-b292-fe301755a3351576102551329-1.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/3e3af82e-a465-46c0-8c52-19e27c063d611576102551460-4.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/512f9dba-fdc5-4e84-a3bf-a430dc3889821576102551501-5.jpg"
+          ],
+          "reviews": [],
+          "id": 6
+        }
+      ],
+      "id": 6
     }
   ]
 }
