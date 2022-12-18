@@ -5,6 +5,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";
 import LargeWithAppLinksAndSocial from "../components/Footer";
@@ -22,7 +24,7 @@ const Products = () => {
         {/* BreadCrumb */}
         <Breadcrumb categ={categ} />
 
-        <Text ml="15px"><span fontWeight="bold">Men T-shirts - </span>{} items</Text>
+        
 
         {/* Products */}
         <ProductsCompo />
