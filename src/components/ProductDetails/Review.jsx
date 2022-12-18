@@ -4,7 +4,7 @@ import IconHeading from "./IconHeading";
 import { Box, Button, Input, InputGroup, InputRightAddon, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 
-const Review = ({ singleData, AddReviews, setInputReview }) => {
+const Review = ({ singleData, AddReviews, setInputReview, inputReview }) => {
 
     const {id} = useParams()
 
@@ -16,7 +16,7 @@ const Review = ({ singleData, AddReviews, setInputReview }) => {
       />
       <Box>{singleData?.reviews && singleData.reviews.map((el) => <Text border="1px" borderColor="gray.200" h="30px" textAlign="center" mb="10px" key={Math.random()*0.2167*Math.random()}>{el}</Text>)}</Box>
       <InputGroup size="md">
-        <Input onChange={(e) => setInputReview(e.target.value)} placeholder="Share your Reviews" />
+        <Input value={inputReview} onChange={(e) => setInputReview(e.target.value)} placeholder="Share your Reviews" />
         <Button onClick={() => AddReviews(id)} bgColor="teal.300">Share</Button>
       </InputGroup>
     </Box>
