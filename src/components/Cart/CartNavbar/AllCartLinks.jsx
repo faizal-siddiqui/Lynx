@@ -13,18 +13,9 @@ const AllCartLinks = () => {
           activeStyle={activeStyle}
         />
       </Box>
+      
       <Box mr="5px">
-        <Text fontSize="10px"> ---------------- </Text>
-      </Box>
-      <Box fontWeight="600" mr="5px">
-        <CartLinks
-          location={"/address"}
-          linkText={" ADDRESS "}
-          activeStyle={activeStyle}
-        />
-      </Box>
-      <Box mr="5px">
-        <Text fontSize="10px" > ---------------- </Text>
+        <Text fontSize="10px" > -------------------------- </Text>
       </Box>
       <Box fontWeight="600" mr="5px">
         <CartLinks

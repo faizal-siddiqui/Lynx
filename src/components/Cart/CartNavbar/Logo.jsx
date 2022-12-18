@@ -3,9 +3,9 @@ import React from "react";
 
 const Logo = ({ imageSrc, width, imageText, mr, color }) => {
   return (
-    <Flex align="center" color={color}>
+    <Flex cursor="pointer" align="center" color={color}>
       <Image mr={mr} src={imageSrc} alt={imageSrc} w={width} />
-      <Text>{imageText}</Text>
+      <Text fontSize="14px" mr="15px">{imageText}</Text>
     </Flex>
   );
 };

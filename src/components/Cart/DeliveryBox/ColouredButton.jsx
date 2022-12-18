@@ -1,17 +1,24 @@
 import { Button } from "@chakra-ui/react";
 import React from "react";
 
-const ColouredButton = ({ color, btnText, hoverColor }) => {
+const ColouredButton = ({
+  color,
+  btnText,
+  hoverColor,
+  padding = "10px",
+  fsize = "12px",
+  bgColor = "#fff",
+}) => {
   return (
     <Button
       color={color}
       _hover={{ bgColor: hoverColor }}
-      bgColor="#fff"
+      bgColor={bgColor}
       border="1px"
       borderColor={color}
-      p={"8px"}
+      p={padding}
       borderRadius="0px"
-      fontSize="12px"
+      fontSize={fsize}
     >
       {btnText}
     </Button>
