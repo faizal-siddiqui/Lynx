@@ -12,56 +12,60 @@ import {
 import ImageGrid from "../components/ImageGrid";
 import CategoryGrid from "../components/CategoryGrid";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
-    <Box w="100%" bgColor="#fefefe">
-      {/* BAnners  */}
-      {BANNER.map((el) => (
-        <MainBanner image={el} />
-      ))}
+    <>
+      <Navbar />
+      <Box w="100%" bgColor="#fefefe">
+        {/* BAnners  */}
+        {BANNER.map((el) => (
+          <MainBanner image={el} />
+        ))}
 
-      {/* LowestPrice Grid */}
-      {
-        <>
-          <ImageGrid images={LOWESTPRICES} />
-        </>
-      }
+        {/* LowestPrice Grid */}
+        {
+          <>
+            <ImageGrid images={LOWESTPRICES} />
+          </>
+        }
 
-      {/* Super Saving Zone Grid */}
-      {
-        <>
-          <Banner image={SUPERSAVINGBANNER} />
-          <ImageGrid images={SUPERSAVINGS} />
-        </>
-      }
+        {/* Super Saving Zone Grid */}
+        {
+          <>
+            <Banner image={SUPERSAVINGBANNER} />
+            <ImageGrid images={SUPERSAVINGS} />
+          </>
+        }
 
-      {/* Top Listed Style Grid */}
-      {
-        <>
-          <Banner image={TOPLISTEDBANNER} />
-          <ImageGrid images={TOPLISTED} />
-        </>
-      }
+        {/* Top Listed Style Grid */}
+        {
+          <>
+            <Banner image={TOPLISTEDBANNER} />
+            <ImageGrid images={TOPLISTED} />
+          </>
+        }
 
-      {/* NEVER SEEN OFFERS Grid */}
-      {
-        <>
-          <Banner image={NEVERSEENBANNER} />
-          <ImageGrid images={NEVERSEEN} />
-        </>
-      }
+        {/* NEVER SEEN OFFERS Grid */}
+        {
+          <>
+            <Banner image={NEVERSEENBANNER} />
+            <ImageGrid images={NEVERSEEN} />
+          </>
+        }
 
-      {/* SHOP BY CATEGORY Grid */}
-      {
-        <>
-          <Banner image={CATEGORYBANNER} />
-          <CategoryGrid images={CATEGORY} />
-        </>
-      }
+        {/* SHOP BY CATEGORY Grid */}
+        {
+          <>
+            <Banner image={CATEGORYBANNER} />
+            <CategoryGrid images={CATEGORY} />
+          </>
+        }
 
-      <Footer />
-    </Box>
+        <Footer />
+      </Box>
+    </>
   );
 };
 

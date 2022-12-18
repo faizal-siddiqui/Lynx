@@ -76,7 +76,15 @@ export default function Navbar() {
           flex={{ base: 1 }}
           justify={{ lg: "space-between", base: "center", md: "start" }}
         >
-          <Image src={images} w={{lg: "11%", md: "17%"}} display={{lg: "block", md: "block", sm: "none"}} alt="logo" />
+          <RouterLink to="/">
+            <Image
+              cursor="pointer"
+              src={images}
+              w={{ lg: "38%", md: "90%" }}
+              display={{ lg: "block", md: "block", sm: "none" }}
+              alt="logo"
+            />
+          </RouterLink>
 
           <Flex
             justifyContent="space-evenly"
@@ -104,18 +112,20 @@ export default function Navbar() {
             </InputGroup>
           </Stack>
 
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
-          >
-            <Box fontSize="20px">
-              <CgProfile />
-              <Text fontSize="13px">Profile</Text>
-            </Box>
-          </Button>
+          <RouterLink to='/signin'>
+            <Button
+              as={"a"}
+              fontSize={"sm"}
+              fontWeight={400}
+              variant={"link"}
+              href={"#"}
+            >
+              <Box fontSize="20px">
+                <CgProfile />
+                <Text fontSize="13px">Profile</Text>
+              </Box>
+            </Button>
+          </RouterLink>
           <Button
             as={"a"}
             fontSize={"sm"}
@@ -128,18 +138,20 @@ export default function Navbar() {
               <Text fontSize="13px">Wishlist</Text>
             </Box>
           </Button>
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
-          >
-            <Box fontSize="20px">
-              <BsHandbag />
-              <Text fontSize="13px">Cart</Text>
-            </Box>
-          </Button>
+          <RouterLink to='/cart'>
+            <Button
+              as={"a"}
+              fontSize={"sm"}
+              fontWeight={400}
+              variant={"link"}
+              href={"#"}
+            >
+              <Box fontSize="20px">
+                <BsHandbag />
+                <Text fontSize="13px">Cart</Text>
+              </Box>
+            </Button>
+          </RouterLink>
         </Stack>
       </Flex>
 
@@ -159,7 +171,7 @@ const DesktopNav = () => {
   return (
     <Stack direction={"row"} spacing={4} w="90%" justify="space-around">
       {NAV_ITEMS.map((navItem) => (
-        <Box key={Math.random()*Math.random()*0.001*0.004}>
+        <Box key={Math.random() * Math.random() * 0.001 * 0.004}>
           <Box>
             <Box alignItems="center" display="flex">
               <Link
@@ -197,7 +209,9 @@ const DesktopNav = () => {
                   {navItem.LISTS.map((el) => {
                     return (
                       <>
-                        <Stack key={Math.random()*Math.random()*0.001*0.004}>
+                        <Stack
+                          key={Math.random() * Math.random() * 0.001 * 0.004}
+                        >
                           <Text
                             fontWeight="bold"
                             color="red.300"
@@ -207,13 +221,15 @@ const DesktopNav = () => {
                             {el.head}
                           </Text>
                           {el.lists.map((list) => (
-                            <RouterLink to={`/products/${list}`}><Text
-                              className={styles.links}
-                              fontSize="12px"
-                              color="black"
-                            >
-                              {list}
-                            </Text></RouterLink>
+                            <RouterLink to={`/products/${list}`}>
+                              <Text
+                                className={styles.links}
+                                fontSize="12px"
+                                color="black"
+                              >
+                                {list}
+                              </Text>
+                            </RouterLink>
                           ))}
                         </Stack>
                       </>
