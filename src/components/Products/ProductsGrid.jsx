@@ -47,7 +47,7 @@ const ProductsGrid = ({ data }) => {
       ) : (
         data &&
         data.map((prod, i) => (
-          <RouterLink to={`/products/${categ}/${prod.id}`}>
+          <RouterLink key={Math.random()*0.65654*Math.random()} to={`/products/${categ}/${prod.id}`}>
             <SingleProduct key={prod.id} prod={prod} i={i} />
           </RouterLink>
         ))

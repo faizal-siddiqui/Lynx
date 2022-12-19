@@ -112,7 +112,7 @@ export default function Navbar() {
             </InputGroup>
           </Stack>
 
-          <RouterLink to='/signin'>
+          <RouterLink to="/signin">
             <Button
               as={"a"}
               fontSize={"sm"}
@@ -138,7 +138,7 @@ export default function Navbar() {
               <Text fontSize="13px">Wishlist</Text>
             </Box>
           </Button>
-          <RouterLink to='/cart'>
+          <RouterLink to="/cart">
             <Button
               as={"a"}
               fontSize={"sm"}
@@ -186,10 +186,10 @@ const DesktopNav = () => {
                   textDecoration: "none",
                   color: linkHoverColor,
                 }}
-                >
+              >
                 {/* <RouterLink to='/products/T-Shirt'> */}
                 {navItem.label}
-              {/* </RouterLink> */}
+                {/* </RouterLink> */}
               </Link>
             </Box>
 
@@ -210,31 +210,29 @@ const DesktopNav = () => {
                 <Stack direction="row" spacing="20" p="20px">
                   {navItem.LISTS.map((el) => {
                     return (
-                      <>
-                        <Stack
-                          key={Math.random() * Math.random() * 0.001 * 0.004}
+                      <Stack
+                        key={Math.random() * Math.random() * 0.001 * 0.004}
+                      >
+                        <Text
+                          fontWeight="bold"
+                          color="red.300"
+                          fontSize="13px"
+                          size="sm"
                         >
-                          <Text
-                            fontWeight="bold"
-                            color="red.300"
-                            fontSize="13px"
-                            size="sm"
-                          >
-                            {el.head}
-                          </Text>
-                          {el.lists.map((list) => (
-                            <RouterLink to={`/products/${list}`}>
-                              <Text
-                                className={styles.links}
-                                fontSize="12px"
-                                color="black"
-                              >
-                                {list}
-                              </Text>
-                            </RouterLink>
-                          ))}
-                        </Stack>
-                      </>
+                          {el.head}
+                        </Text>
+                        {el.lists.map((list) => (
+                          <RouterLink to={`/products/${list}`}>
+                            <Text
+                              className={styles.links}
+                              fontSize="12px"
+                              color="black"
+                            >
+                              {list}
+                            </Text>
+                          </RouterLink>
+                        ))}
+                      </Stack>
                     );
                   })}
                 </Stack>

@@ -21,7 +21,7 @@ const Home = () => {
       <Box w="100%" bgColor="#fefefe">
         {/* BAnners  */}
         {BANNER.map((el) => (
-          <MainBanner image={el} />
+          <MainBanner key={Math.random()*0.76756*Math.random()} image={el} />
         ))}
 
         {/* LowestPrice Grid */}

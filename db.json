@@ -7,7 +7,7 @@
       "name": "Men Blue Solid Polo Collar Pure Cotton T-shirt",
       "rating": {
         "star": 4.4,
-        "count": 568
+        "count": 569
       },
       "price": 399,
       "mrp": 999,
@@ -30,7 +30,9 @@
         "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/10/3/9da11bfc-527c-44b2-8a2f-1e5d0cd85e121570086314135-3.jpg",
         "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/10/3/bbdddcfc-4e61-4b2b-ac93-873c94f8235d1570086314170-4.jpg"
       ],
-      "reviews": []
+      "reviews": [
+        "Best Product"
+      ]
     },
     {
       "carause": false,
@@ -168,7 +170,7 @@
       "name": "Men Beige & Black Typography Printed Sustainable T-shirt",
       "rating": {
         "star": 4,
-        "count": 12902
+        "count": 12903
       },
       "price": 296,
       "mrp": 1099,
@@ -191,7 +193,9 @@
         "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/3e3af82e-a465-46c0-8c52-19e27c063d611576102551460-4.jpg",
         "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/512f9dba-fdc5-4e84-a3bf-a430dc3889821576102551501-5.jpg"
       ],
-      "reviews": [],
+      "reviews": [
+        "Best Product"
+      ],
       "id": 6
     },
     {
@@ -264,7 +268,7 @@
       "name": "Men Teal Green Slim Fit Tropical Printed Pure Cotton T-shirt",
       "rating": {
         "star": 4.1,
-        "count": 93000
+        "count": 93001
       },
       "price": 439,
       "mrp": 1099,
@@ -1425,6 +1429,42 @@
         }
       ],
       "id": 6
+    },
+    {
+      "email": "anantsidp@gmail.com",
+      "password": "Anan!234",
+      "name": "Anant Kumar",
+      "mobile": 0,
+      "gender": "",
+      "birthDate": "",
+      "location": "",
+      "cardDetails": "",
+      "cart": [],
+      "id": 7
+    },
+    {
+      "email": "akash@gmail.com",
+      "password": "Akas!234",
+      "name": "Akash Kumar",
+      "mobile": 0,
+      "gender": "",
+      "birthDate": "",
+      "location": "",
+      "cardDetails": "",
+      "cart": [],
+      "id": 8
+    },
+    {
+      "email": "akash@gmail.com",
+      "password": "Akas!234",
+      "name": "Akash Kumar",
+      "mobile": 0,
+      "gender": "",
+      "birthDate": "",
+      "location": "",
+      "cardDetails": "",
+      "cart": [],
+      "id": 9
     }
   ]
 }

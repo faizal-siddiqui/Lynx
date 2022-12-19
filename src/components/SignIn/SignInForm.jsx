@@ -22,6 +22,7 @@ import { useToast } from "@chakra-ui/react";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { DeliveryContext } from "../../contexts/DeliveryContext";
+import { useEffect } from "react";
 
 export default function SignInForm() {
   const toast = useToast();
@@ -29,14 +30,19 @@ export default function SignInForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [profileData, setProfileData] = useState([]);
+
   const [profileDataObj, setProfileDataObj] = useState({});
   const [loading, setLoading] = useState(false);
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
 
-  const { isAuth, setIsAuth } = useContext(AuthContext);
+  const ref1 = useRef(null)
+  const ref2 = useRef(null)
+
+  const { isAuth, setIsAuth, name, setName } = useContext(AuthContext);
 
   const { profileId, setProfileId } = useContext(DeliveryContext);
+
 
   // toast message
   const openToast = (text, status, desc) => {
@@ -49,14 +55,29 @@ export default function SignInForm() {
     });
   };
 
+
+  useEffect(() => {
+  
+    return () => {
+      clearTimeout(ref1.current) 
+      clearTimeout(ref2.current) 
+    }
+  }, [])
+  
+  
+
   // for comparing the website data with the typed data
   const compareData = (data) => {
-    setTimeout(() => {
+    ref1.current = setTimeout(() => {
       if (data && data[0] && data[0].email === email) {
         openToast("LOGIN SUCCESSFUL", "success", "");
         setLoading(false);
         setIsAuth(true);
         setProfileId(data[0].id);
+        setProfileData(data[0].location);
+        setName(data[0].name)
+        localStorage.setItem("auth", JSON.stringify(true))
+        localStorage.setItem("name", JSON.stringify(data[0].name))
         setEmail("");
         setPassword("");
         navigate("/");
@@ -75,7 +96,7 @@ export default function SignInForm() {
         `${process.env.REACT_APP_PRODUCTS}/profile?email=${email}&password=${password}`
       )
       .then((res) => {
-        setProfileData(res.data);
+        // setProfileData(res.data);
         compareData(res.data);
       })
       .catch((err) => {
@@ -91,7 +112,7 @@ export default function SignInForm() {
       email,
       password,
     });
-    setTimeout(() => {
+    ref2.current = setTimeout(() => {
       getDataFromApi();
     }, 1000);
   };
@@ -112,6 +133,8 @@ export default function SignInForm() {
     setProfileData([]);
     setProfileDataObj({});
     openToast("LOGOUT SUCCESSFUL", "success", "");
+    localStorage.setItem("auth", JSON.stringify(false))
+    localStorage.setItem("name", JSON.stringify(""))
   };
 
   const colorMode =  useColorModeValue("white", "gray.700")
@@ -120,7 +143,11 @@ export default function SignInForm() {
     <Box bgGradient={"linear(to-r, teal.100, pink.200)"} h="100vh">
 
         <Flex>
+
             <Box m="auto" mt="100px">
+              <Box>
+                <Text mb="30px" fontSize="20px"  fontWeight="500">Hello! {name}. Want to SignOut?</Text>
+              </Box>
             <Button
                 onClick={() => Logout()}
                 py="20px"
@@ -168,6 +195,7 @@ export default function SignInForm() {
                 name="email"
                 onChange={handleEmail}
                 type="email"
+                placeholder="Enter email"
               />
             </FormControl>
             <FormControl id="password">

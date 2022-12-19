@@ -154,7 +154,7 @@ export default function SignInForm() {
             bgClip="text"
             fontSize={"4xl"}
           >
-            Sign in to your account
+            Create your Account here
           </Heading>
           <Text fontSize={"lg"} color={"gray.600"}></Text>
         </Stack>
@@ -169,6 +169,7 @@ export default function SignInForm() {
                 isRequired
                 name="name"
                 onChange={handleName}
+                placeholder="Enter Full Name"
               />
             </FormControl>
 
@@ -182,6 +183,7 @@ export default function SignInForm() {
                 name="email"
                 onChange={handleEmail}
                 type="email"
+                placeholder="Enter email"
               />
             </FormControl>
             <FormControl id="password">
@@ -210,8 +212,7 @@ export default function SignInForm() {
                 align={"start"}
                 justify={"space-between"}
               >
-                <Checkbox>Remember me</Checkbox>
-                <Link color={"blue.400"}>Forgot password?</Link>
+                
               </Stack>
               <Button
                 isLoading={loading}
@@ -222,14 +223,14 @@ export default function SignInForm() {
                   bg: "#ff3e6c",
                 }}
               >
-                Sign in
+                Sign Up
               </Button>
               <Flex>
-                <Text mr={"5px"}>Didn't have an Account?</Text>
-                <Link to="/signup">
+                <Text mr={"5px"}>Already have an Account?</Text>
+                <Link to="/signin">
                   <Text color="blue.400" cursor="pointer">
                     {" "}
-                    SignUp
+                    SignIn
                   </Text>
                 </Link>
               </Flex>

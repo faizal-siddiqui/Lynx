@@ -13,11 +13,12 @@ import Navbar from "../components/Navbar";
 
 const ProductsDetails = () => {
 const [singleData, setSingleData] = useState({});
-
+const [data, setData] = useState()
   const { categ, id } = useParams();
 
   useEffect(() => {
     fetchById(id);
+    fetchBycateg()
   }, []);
 
   const setTotalProducts = () => {
@@ -34,6 +35,18 @@ const [singleData, setSingleData] = useState({});
       console.log("err:", err);
     }
   };
+
+  const fetchBycateg = async () => {
+    try {
+      const response = await axios.get(
+        `${process.env.REACT_APP_PRODUCTS}/products?page=2&limit=20`
+      );
+      response?.data && setData(response.data);
+    } catch (err) {
+      console.log("err:", err);
+    }
+  };
+
 
   return (
     <>
@@ -52,7 +65,7 @@ const [singleData, setSingleData] = useState({});
         <Box ml="2.5%" mt="40px">
           <IconHeading headText={"SIMILAR PRODUCTS"} />
         </Box>
-        <ProductsGrid page={2} limit={20} setTotalProducts={setTotalProducts} />
+        <ProductsGrid data={data}/>
         <LargeWithAppLinksAndSocial />
       </Box>
     </>

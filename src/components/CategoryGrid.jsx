@@ -14,7 +14,7 @@ const CategoryGrid = ({ images }) => {
       }}
     >
       {images.map((img) => (
-        <RouterLink to="">
+        <RouterLink key={Math.random()*0.867*Math.random()} to="">
           <GridItem>
             <Image src={img} alt="" />
           </GridItem>

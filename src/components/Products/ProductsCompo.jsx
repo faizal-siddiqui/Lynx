@@ -455,6 +455,7 @@ const ProductsCompo = () => {
                 .fill(0)
                 .map((el, i) => (
                   <Button
+                    key={i*Math.random()*0.6755}
                     _disabled={{ bgColor: "black" }}
                     disabled={page === i + 1}
                     color={page == i + 1 ? "#fff" : ""}
