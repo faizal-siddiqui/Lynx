@@ -1,7 +1,8 @@
 # Lynx.com
-This project is created using React and Chakra Ui.
+### (An Ecommerce platform that provides clothing, apparel and beauty products.)
 
-## Available Scripts
+### `Tech Stack`
+
 
 In the project directory, you can run:
 
@@ -67,3 +68,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
