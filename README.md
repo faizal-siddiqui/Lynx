@@ -76,7 +76,7 @@
 
  ![](https://media.giphy.com/media/xPAK3WzSRzZ5gZ26Ft/giphy.gif)
 
-## Blocked route
+## Blocked Some Pages without Login
 ![](https://media.giphy.com/media/3roin2M0cDftqsVJpT/giphy.gif)
 
 
