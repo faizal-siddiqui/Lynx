@@ -39,6 +39,35 @@ For queries, email faizalsidp@gmail.com.
 
 
 
+# FlowCharts Images 
+
+## AllPages
+<img width="583" alt="allpages" src="https://user-images.githubusercontent.com/112858862/208751409-391be26c-3690-4880-8fe1-f46d12d678f6.png">
+
+## All Contexts
+![context drawio](https://user-images.githubusercontent.com/112858862/208751498-976c1cfe-abdf-474f-a556-905ac411292f.png)
+
+## Authorizations
+![auth drawio](https://user-images.githubusercontent.com/112858862/208751580-37969947-d003-45a0-85f5-ff016a3eaddd.png)
+
+## Home Page
+<img width="572" alt="Home" src="https://user-images.githubusercontent.com/112858862/208751650-65d1bf98-046b-4603-9293-a40a1599973b.png">
+
+## Products Page
+<img width="537" alt="productspage" src="https://user-images.githubusercontent.com/112858862/208751718-a08e54e2-1483-428e-bab1-a320f4259abb.png">
+
+## ProductsDetails Page
+![ProductDetailsnew drawio](https://user-images.githubusercontent.com/112858862/208751908-d5a961f0-37ef-4f82-ac9b-bd10648e8351.png)
+
+## Cart page
+![cart drawio](https://user-images.githubusercontent.com/112858862/208751966-ccad10b6-0b41-4f03-ab70-f69cb340d32d.png)
+
+## Payment Page
+![payment drawio](https://user-images.githubusercontent.com/112858862/208751991-92c23d67-e6ce-4ffc-863f-a3e162c99975.png)
+
+
+
+
 # Here are some project gifs
 
 ## Homepage
