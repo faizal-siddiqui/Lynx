@@ -1,13 +1,43 @@
-# Lynx.com
-### (An Ecommerce platform that provides clothing, apparel and beauty products.)
 
-### `Tech Stack`
-- React
-- React Router Dom
-- React Icons
-- Chakra Ui
-- Chakra Icons
-- Axios
+# Lynx.com
+
+
+An Ecommerce platform that provides user to purchase clothing, apparel and beauty products
+
+
+
+## Tech Stack
+
+**Client:** React, ChakraUi, Axios, React Router Dom, React Icons
+
+**Server:** Json Server
+
+
+## How to run this project on Code Editor
+
+To run this project, you will need to write the following commands in your terminal.
+
+
+`json-server --watch db.json --port 3000`
+
+
+`npm start`
+
+
+## Deployment
+
+This project is deployed on netlify
+
+[Lynx.com](https://buyonlynx.netlify.app/)
+
+
+
+
+## Queries
+
+For queries, email faizalsidp@gmail.com.
+
+
 
 # Here are some project gifs
 
