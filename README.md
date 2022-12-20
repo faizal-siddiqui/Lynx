@@ -2,7 +2,13 @@
 ### (An Ecommerce platform that provides clothing, apparel and beauty products.)
 
 ### `Tech Stack`
-
+- React
+- React Router Dom
+- React Icons
+- Chakra Ui
+- Chakra Icons
+- 
+   -Libra
 
 # Here are some project gifs
 
