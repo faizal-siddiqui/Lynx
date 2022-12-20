@@ -1,6 +1,5 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Lynx.com
+This project is created using React and Chakra Ui.
 
 ## Available Scripts
 
