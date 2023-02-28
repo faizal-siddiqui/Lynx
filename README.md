@@ -8,9 +8,15 @@ An Ecommerce platform that provides user to purchase clothing, apparel and beaut
 
 ## Tech Stack
 
-**Client:** React, ChakraUi, Axios, React Router Dom, React Icons
+**ClientSide:** 
+  - React 
+  - ChakraUi
+  - Axios
+  - React Router Dom
+  - React Icons
 
-**Server:** Json Server
+**Server:** 
+  - Json Server
 
 
 ## How to run this project on Code Editor
