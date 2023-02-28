@@ -10,10 +10,13 @@ An Ecommerce platform that provides user to purchase clothing, apparel and beaut
 
 **ClientSide:** 
   - React 
-  - ChakraUi
   - Axios
   - React Router Dom
   - React Icons
+  - Chakra Icons
+  - CSS
+  - ChakraUi (External Css)
+  
 
 **Server:** 
   - Json Server
