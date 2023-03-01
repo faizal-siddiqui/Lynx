@@ -102,6 +102,7 @@ const PaymentAccordion = () => {
                       type="number"
                       onChange={(e) => setInputCode(e.target.value)}
                       value={inputCode}
+                      placeholder="Enter captcha"
                     />
                   </Box>
                   <Box>

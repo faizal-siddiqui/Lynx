@@ -1,6 +1,7 @@
 import React from "react";
 import { StarIcon } from "@chakra-ui/icons";
 import { Box, Flex, GridItem, Heading, Image, Text } from "@chakra-ui/react";
+import ImageCarausel from "./ImageCarausel";
 const SingleProduct = ({ prod, i }) => {
 
 
@@ -18,8 +19,9 @@ const SingleProduct = ({ prod, i }) => {
       >
         <Box _hover={{boxShadow:"rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;"}} cursor="pointer">
           <Box position="relative">
-            <Image src={prod.images[0]} alt={prod.brand} />
+            {/* <Image src={prod.images[0]} alt={prod.brand} /> */}
             {/* <Box h="30px" display="none" _hover={{display: "block"}}></Box> */}
+            <ImageCarausel images={prod.images} flag={true} />
             <Flex
               fontSize="14px"
               width="fit-content"

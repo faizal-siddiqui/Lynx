@@ -173,7 +173,7 @@ export default function SignInForm() {
               />
             </FormControl>
 
-            <FormControl id="email">
+            <FormControl isRequired id="email">
               <FormLabel>Email address</FormLabel>
               <Input
                 isDisabled={loading}
@@ -186,7 +186,7 @@ export default function SignInForm() {
                 placeholder="Enter email"
               />
             </FormControl>
-            <FormControl id="password">
+            <FormControl isRequired id="password">
               <FormLabel>Password</FormLabel>
               <InputGroup size="md">
                 <Input
