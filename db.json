@@ -1317,7 +1317,74 @@
       "location": "14 A Sector Near Crios Mall, Delhi India",
       "cardDetails": "89878676565441",
       "password": "Faiz!234",
-      "cart": []
+      "cart": [
+        {
+          "id": 1,
+          "carause": false,
+          "brand": "Allen Solly",
+          "name": "Men Blue Solid Polo Collar Pure Cotton T-shirt",
+          "rating": {
+            "star": 4.4,
+            "count": 569
+          },
+          "price": 399,
+          "mrp": 999,
+          "discount": 60,
+          "sizes": "M",
+          "qty": 1,
+          "category": "tshirts",
+          "type": "men",
+          "productDetails": "Blue solid T-shirt, has a polo collar, and short sleeves",
+          "size": "The model (height 6') is wearing a size M",
+          "material": "100% Cotton",
+          "specification": {
+            "fabric": "Pure Cotton",
+            "fit": "Regular Fit",
+            "length": "Regular",
+            "mainTrend": "New Basics"
+          },
+          "images": [
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/10/3/09814e9d-8388-4857-8f41-a03c9d9698701570086314065-1.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/10/3/9da11bfc-527c-44b2-8a2f-1e5d0cd85e121570086314135-3.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/10/3/bbdddcfc-4e61-4b2b-ac93-873c94f8235d1570086314170-4.jpg"
+          ],
+          "reviews": [
+            "Best Product"
+          ]
+        },
+        {
+          "carause": false,
+          "brand": "HIGHLANDER",
+          "name": "Men White Navy Slim Fit Round Neck Pure Cotton T-shirt",
+          "rating": {
+            "star": 3.8,
+            "count": 1802
+          },
+          "price": 279,
+          "mrp": 699,
+          "discount": 45,
+          "sizes": "M",
+          "qty": 1,
+          "category": "tshirts",
+          "type": "men",
+          "productDetails": "White and navy blue T-shirt, has a round neck, long raglan sleeves",
+          "size": "Slim fit",
+          "material": "100% cotton",
+          "specification": {
+            "fabric": "Pure Cotton",
+            "fit": "Slim Fit",
+            "length": "Regular",
+            "mainTrend": "Nautical"
+          },
+          "images": [
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1923231/2018/3/27/11522150765599-HIGHLANDER-Men-White--Navy-Slim-Fit-Round-Neck-T-shirt-5801522150765458-5.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1923231/2018/3/27/11522150765620-HIGHLANDER-Men-White--Navy-Slim-Fit-Round-Neck-T-shirt-5801522150765458-4.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1923231/2018/3/27/11522150765639-HIGHLANDER-Men-White--Navy-Slim-Fit-Round-Neck-T-shirt-5801522150765458-3.jpg"
+          ],
+          "reviews": [],
+          "id": 2
+        }
+      ]
     },
     {
       "id": 2,

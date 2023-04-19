@@ -31,15 +31,16 @@ const ProductDescription = ({ singleData, fetchById }) => {
   const AddReviews = async (id) => {
     const newReviews = [...singleData.reviews, inputReview];
 
-
-    const response = await axios.patch(`${process.env.REACT_APP_PRODUCTS}/products/${id}`, {
-      reviews: newReviews
-    })
-    fetchById(id)
+    const response = await axios.patch(
+      `${process.env.REACT_APP_PRODUCTS}/products/${id}`,
+      {
+        reviews: newReviews,
+      }
+    );
+    fetchById(id);
     // console.log(response)
-    setInputReview("")
-  }
-
+    setInputReview("");
+  };
 
   const UpdateStar = async (id) => {
     const newRating = {
@@ -47,14 +48,15 @@ const ProductDescription = ({ singleData, fetchById }) => {
       count: singleData.rating.count + 1,
     };
 
-
-    const response = await axios.patch(`${process.env.REACT_APP_PRODUCTS}/products/${id}`, {
-      rating: newRating
-    })
-    fetchById(id)
-    console.log(response)
-  }
-
+    const response = await axios.patch(
+      `${process.env.REACT_APP_PRODUCTS}/products/${id}`,
+      {
+        rating: newRating,
+      }
+    );
+    fetchById(id);
+    console.log(response);
+  };
 
   return (
     <>
@@ -62,7 +64,10 @@ const ProductDescription = ({ singleData, fetchById }) => {
         <BrandName singleData={singleData} />
       </Box>
       <Box m="20px" pb="15px" borderBottom="1px" borderColor="gray.300">
-        <PriceCompo singleData={singleData} />
+        <PriceCompo
+          singleData={singleData}
+          fsize={{ lg: "20px", md: "18px", sm: "16px", base: "15px" }}
+        />
         <Text fontSize="14px" fontWeight="bold" color="green.400">
           inclusive of all taxes
         </Text>
@@ -92,9 +97,12 @@ const ProductDescription = ({ singleData, fetchById }) => {
         <RatingBox singleData={singleData} UpdateStar={UpdateStar} />
       </Box>
       <Box m="20px" pb="15px" borderBottom="1px" borderColor="gray.300">
-
-        <Review setInputReview={setInputReview} AddReviews={AddReviews} singleData={singleData} inputReview={inputReview} />
-
+        <Review
+          setInputReview={setInputReview}
+          AddReviews={AddReviews}
+          singleData={singleData}
+          inputReview={inputReview}
+        />
       </Box>
     </>
   );

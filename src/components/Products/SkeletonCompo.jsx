@@ -3,13 +3,66 @@ import React from "react";
 
 const SkeletonCompo = () => {
   return (
-      <Grid mt="20px" gap="10px" >
-        <GridItem w="100%"><Skeleton height="100px" /><Skeleton height="100px" /></GridItem>
-        <GridItem w="100%"><Skeleton height="100px" /><Skeleton height="100px"  /></GridItem>
-        <GridItem w="100%"><Skeleton height="100px" /><Skeleton height="100px" /></GridItem>
-        <GridItem w="100%"><Skeleton height="100px" /><Skeleton height="100px" /></GridItem>
-        <GridItem w="100%"><Skeleton height="100px" /><Skeleton height="100px" /></GridItem>
-      </Grid>
+    <Grid
+      mt="20px"
+      gap="10px"
+      templateColumns={{
+        lg: "repeat(4, 1fr)",
+        md: "repeat(3, 1fr)",
+        sm: "repeat(2, 1fr)",
+        base: "repeat(2, 1fr)",
+      }}
+      gap={5}
+    >
+      <GridItem w="100%">
+        <Skeleton height="100px" />
+        <Skeleton height="100px" />
+      </GridItem>
+      <GridItem w="100%">
+        <Skeleton height="100px" />
+        <Skeleton height="100px" />
+      </GridItem>
+      <GridItem w="100%">
+        <Skeleton height="100px" />
+        <Skeleton height="100px" />
+      </GridItem>
+      <GridItem w="100%">
+        <Skeleton height="100px" />
+        <Skeleton height="100px" />
+      </GridItem>
+      <GridItem w="100%">
+        <Skeleton height="100px" />
+        <Skeleton height="100px" />
+      </GridItem>
+      <GridItem w="100%">
+        <Skeleton height="100px" />
+        <Skeleton height="100px" />
+      </GridItem>
+      <GridItem w="100%">
+        <Skeleton height="100px" />
+        <Skeleton height="100px" />
+      </GridItem>
+      <GridItem w="100%">
+        <Skeleton height="100px" />
+        <Skeleton height="100px" />
+      </GridItem>
+      <GridItem w="100%">
+        <Skeleton height="100px" />
+        <Skeleton height="100px" />
+      </GridItem>
+      <GridItem w="100%">
+        <Skeleton height="100px" />
+        <Skeleton height="100px" />
+      </GridItem>
+      <GridItem w="100%">
+        <Skeleton height="100px" />
+        <Skeleton height="100px" />
+      </GridItem>
+      <GridItem w="100%">
+        <Skeleton height="100px" />
+        <Skeleton height="100px" />
+      </GridItem>
+    </Grid>
   );
 };
 

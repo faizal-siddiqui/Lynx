@@ -63,6 +63,7 @@ const PaymentAccordion = () => {
             >
               <Box p="5px" as="span" flex="1" textAlign="left">
                 <IconHeading
+                  // fsize={{ lg: "13px", md: "13px", sm: "13px", base: "13px" }}
                   icon={<GiTakeMyMoney fontSize="20px" />}
                   headText={"Cash On Delivery (Cash/UPI)"}
                 />

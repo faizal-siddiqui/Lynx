@@ -51,6 +51,7 @@ function DeliveryModal({ SIZES, modalText, stateVar, modalHeading, data, el }) {
                 lg: "repeat(6, 1fr)",
                 md: "repeat(3, 1fr)",
                 sm: "repeat(3, 1fr)",
+                base: "repeat(3, 1fr)",
               }}
             >
               {SIZES &&

@@ -6,10 +6,13 @@ const RatingCompo = ({ rating }) => {
   return (
     <Box>
       <Flex fontSize="30px" align="center">
-        <Box fontSize="60px" mr="10px">
+        <Box
+          fontSize={{ lg: "60px", md: "50px", sm: "40px", base: "30px" }}
+          mr="10px"
+        >
           {rating.star}
         </Box>
-        <Box fontSize="40px">
+        <Box fontSize={{ lg: "40px", md: "35px", sm: "30px", base: "20px" }}>
           <StarIcon color="#14958f" />
         </Box>
       </Flex>

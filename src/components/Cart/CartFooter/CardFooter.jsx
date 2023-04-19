@@ -2,8 +2,9 @@ import { Box, Flex, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import React from "react";
 
 const CardFooter = () => {
+  const margin = { lg: "170px", md: "160px", sm: "100px", base: "20px" };
   return (
-    <Box mt="100px" ml="170px" mr="170px">
+    <Box mt="100px" ml={margin} mr={margin}>
       <Flex justify="space-between">
         <Grid
           w="70%"
@@ -11,10 +12,11 @@ const CardFooter = () => {
             lg: "repeat(10, 1fr)",
             md: "repeat(5, 1fr)",
             sm: "repeat(3, 1fr)",
+            base: "repeat(4, 1fr)",
           }}
         >
           {FooterImage.map((img) => (
-            <GridItem  key={Math.random() * 0.6565 * Math.random()}>
+            <GridItem key={Math.random() * 0.6565 * Math.random()}>
               <Image w="80%" src={img} alt="" />
             </GridItem>
           ))}
@@ -39,4 +41,3 @@ const FooterImage = [
 ];
 
 export default CardFooter;
-

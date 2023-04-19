@@ -61,7 +61,11 @@ const SingleCartBox = ({ cart }) => {
                   </Flex>
                 </Flex>
               </Box>
-              <Box position="absolute" right="8px" top="5px">
+              <Box
+                position="absolute"
+                right={{ lg: "8px", md: "7px", sm: "6px", base: "5px" }}
+                top={{ lg: "5px", md: "5px", sm: "3px", base: "1px" }}
+              >
                 <CloseButton
                   onClick={() => {
                     removeCartDataFunc(cart, el);
