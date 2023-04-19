@@ -10,11 +10,11 @@ const CategoryGrid = ({ images }) => {
         lg: "repeat(6, 1fr)",
         md: "repeat(3, 1fr)",
         sm: "repeat(2, 1fr)",
-        // xs: "repeat(2, 1fr)",
+        base: "repeat(2, 1fr)",
       }}
     >
       {images.map((img) => (
-        <RouterLink key={Math.random()*0.867*Math.random()} to="">
+        <RouterLink key={Math.random() * 0.867 * Math.random()} to="">
           <GridItem>
             <Image src={img} alt="" />
           </GridItem>

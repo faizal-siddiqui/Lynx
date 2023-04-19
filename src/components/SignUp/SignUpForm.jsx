@@ -26,7 +26,7 @@ export default function SignInForm() {
   const toast = useToast();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
-  console.log('email:', email)
+  console.log("email:", email);
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [profileData, setProfileData] = useState([]);
@@ -78,10 +78,9 @@ export default function SignInForm() {
       if (data && data[0] && data[0].email === email) {
         openToast("USER ALREADY EXIST", "error", "");
         setLoading(false);
-        setName("")
+        setName("");
         setEmail("");
         setPassword("");
-        ;
       } else {
         addDataToApi();
       }
@@ -142,7 +141,7 @@ export default function SignInForm() {
 
   return (
     <Flex
-      minH={"100vh"}
+      // minH={"100vh"}
       align={"center"}
       justify={"center"}
       bgGradient={"linear(to-r, teal.100, pink.200)"}
@@ -173,7 +172,7 @@ export default function SignInForm() {
               />
             </FormControl>
 
-            <FormControl id="email">
+            <FormControl isRequired id="email">
               <FormLabel>Email address</FormLabel>
               <Input
                 isDisabled={loading}
@@ -186,7 +185,7 @@ export default function SignInForm() {
                 placeholder="Enter email"
               />
             </FormControl>
-            <FormControl id="password">
+            <FormControl isRequired id="password">
               <FormLabel>Password</FormLabel>
               <InputGroup size="md">
                 <Input
@@ -211,9 +210,7 @@ export default function SignInForm() {
                 direction={{ base: "column", sm: "row" }}
                 align={"start"}
                 justify={"space-between"}
-              >
-                
-              </Stack>
+              ></Stack>
               <Button
                 isLoading={loading}
                 onClick={() => submitForm()}

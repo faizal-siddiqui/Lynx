@@ -15,58 +15,54 @@ import LargeWithAppLinksAndSocial from "../Footer";
 import axios from "axios";
 import { useSearchParams } from "react-router-dom";
 
+const getPageNumber = (page) => {
+  let pageNumber = +page;
 
-const getPageNumber = (page) =>{
-  let pageNumber = +page
-
-  if(pageNumber < 0 || typeof pageNumber != 'number'){
-    pageNumber = 1
+  if (pageNumber < 0 || typeof pageNumber != "number") {
+    pageNumber = 1;
   }
 
-  if(!pageNumber){
-    pageNumber = 1
+  if (!pageNumber) {
+    pageNumber = 1;
   }
 
-  return pageNumber
-}
+  return pageNumber;
+};
 
-const getLimitNumber = (limit) =>{
-  let limitNumber = +limit
+const getLimitNumber = (limit) => {
+  let limitNumber = +limit;
 
-  if(limitNumber < 0 || typeof limitNumber != 'number'){
-    limitNumber = 20
+  if (limitNumber < 0 || typeof limitNumber != "number") {
+    limitNumber = 20;
   }
 
-  if(!limitNumber){
-    limitNumber = 20
+  if (!limitNumber) {
+    limitNumber = 20;
   }
 
-  return limitNumber
-}
+  return limitNumber;
+};
 
 const ProductsCompo = () => {
   const [data, setData] = useState([]);
   // console.log('data:', data)
-  const [searchParams, setSearchParams] = useSearchParams()
-  const [page, setPage] = useState(
-    getPageNumber(searchParams.get("page"))
-  );
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [page, setPage] = useState(getPageNumber(searchParams.get("page")));
   const [limit, setLimit] = useState(getLimitNumber(searchParams.get("limit")));
-  
+
   const [discount, setDiscount] = useState(0);
   const [discountObj, setDiscountObj] = useState({});
-  
+
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(2000);
-  
+
   const [totalProducts, setTotalProducts] = useState(1);
   const [loading, setLoading] = useState(false);
-  
+
   const [priceObj, setPriceObj] = useState({});
-  
+
   const [filterObj, setFilterObj] = useState({});
   const [filterStr, setFilterStr] = useState("");
-  
 
   const getUrl = (url, updatedStr) => {
     let newUrl = "";
@@ -75,18 +71,17 @@ const ProductsCompo = () => {
     } else {
       newUrl = url;
     }
-    
+
     return newUrl;
   };
 
   useEffect(() => {
-    setSearchParams({page, limit})
-  }, [page, limit])
-  
+    setSearchParams({ page, limit });
+  }, [page, limit]);
+
   useEffect(() => {
     productsFetch();
   }, [filterStr, minPrice, discount, page, limit]);
-
 
   const productsFetch = () => {
     const updatedUrl = getUrl(
@@ -104,10 +99,9 @@ const ProductsCompo = () => {
       })
       .catch((err) => console.log("err:", err))
       .finally(() => {
-        setLoading(false)
+        setLoading(false);
       });
   };
-
 
   const handleLimit = (e) => {
     setLimit(+e.target.value);
@@ -202,32 +196,54 @@ const ProductsCompo = () => {
 
   return (
     <Box>
-      <Text ml="15px"><span fontWeight="bold">Men T-shirts - </span>{data.length} items</Text>
+      <Text ml="15px">
+        <span fontWeight="bold">Men T-shirts - </span>
+        {data.length} items
+      </Text>
       <Box
         mt="30px"
         display="flex"
-        flexDirection={{ lg: "row", md: "column", sm: "column" }}
+        flexDirection={{
+          lg: "row",
+          md: "column",
+          sm: "column",
+          base: "column",
+        }}
       >
         {/* AllFilter */}
         <Box
           w={{ lg: "25%", md: "100%", sm: "100%" }}
-          h="100vh"
+          h="auto"
           bgColor="#fff"
           display="flex"
-          flexDirection={{ lg: "column", md: "row", sm: "row" }}
-          mb={data?.length == 0? "400px" : data.length < 5 ? "350px" : "0px"}
+          flexDirection={{ lg: "column", md: "row", sm: "row", base: "row" }}
+          mb={data?.length == 0 ? "30px" : data.length < 5 ? "30px" : "0px"}
         >
           <Box
             w="100%"
             border="1px"
             borderColor="gray.200"
             borderBottom="0px solid red"
-            overflow={{ lg: "visible", md: "scroll-y", sm: "scroll" }}
-            padding={{ lg: "15px", md: "12px", sm: "4px" }}
+            overflow={{
+              lg: "visible",
+              md: "scroll-y",
+              sm: "scroll",
+              base: "scroll",
+            }}
+            padding={{ lg: "15px", md: "12px", sm: "4px", base: "1px" }}
           >
             <Flex direction={{ lg: "column", md: "row", sm: "row" }}>
               <Stack ml="20px">
-                <Text mt="15px" fontSize="17px" fontWeight="bold">
+                <Text
+                  mt="15px"
+                  fontSize={{
+                    lg: "17px",
+                    md: "16px",
+                    sm: "15px",
+                    base: "14px",
+                  }}
+                  fontWeight="bold"
+                >
                   FILTER BY BRANDS
                 </Text>
 
@@ -235,133 +251,302 @@ const ProductsCompo = () => {
                   name="Allen Solly"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  Allen Solly
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    Allen Solly
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="HIGHLANDER"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  HIGHLANDER
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    HIGHLANDER
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="Louis Philippe Sport"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  Louis Philippe Sport
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    Louis Philippe Sport
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="HRX by Hrithik Roshan"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  HRX by Hrithik Roshan
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    HRX by Hrithik Roshan
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="Huetrap"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  Huetrap
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    Huetrap
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="Roadster"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  Roadster
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    Roadster
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="Urbano Fashion"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  Urbano Fashion
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    Urbano Fashion
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="Peter England Casuals"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  Peter England Casuals
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    Peter England Casuals
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="WROGN"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  WROGN
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    WROGN
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="H&M"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  H&M
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    H&M
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="Rodzen"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  Rodzen
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    Rodzen
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="t-base"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  t-base
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    t-base
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="Bewakoof"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  Bewakoof
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    Bewakoof
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="Nautica"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  Nautica
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    Nautica
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="Force NXT"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  Force NXT
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    Force NXT
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="Levis"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  Levis
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    Levis
+                  </Text>
                 </Checkbox>
               </Stack>
               <Stack ml="20px">
-                <Text mt="15px" fontSize="17px" fontWeight="bold">
+                <Text
+                  mt="15px"
+                  fontSize={{
+                    lg: "17px",
+                    md: "16px",
+                    sm: "15px",
+                    base: "14px",
+                  }}
+                  fontWeight="bold"
+                >
                   FILTER BY PRICE
                 </Text>
 
@@ -369,37 +554,86 @@ const ProductsCompo = () => {
                   name="149"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  ₹ 149 - ₹499
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    ₹ 149 - ₹499
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="500"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  ₹ 500 - ₹999
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    ₹ 500 - ₹999
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="1000"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  ₹ 1000 - ₹1499
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    ₹ 1000 - ₹1499
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="1500"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  ₹ 1500 - Above
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    ₹ 1500 - Above
+                  </Text>
                 </Checkbox>
               </Stack>
               <Stack ml="20px">
-                <Text mt="15px" fontSize="17px" fontWeight="bold">
+                <Text
+                  mt="15px"
+                  fontSize={{
+                    lg: "17px",
+                    md: "16px",
+                    sm: "15px",
+                    base: "14px",
+                  }}
+                  fontWeight="bold"
+                >
                   FILTER BY DISCOUNT
                 </Text>
 
@@ -407,33 +641,73 @@ const ProductsCompo = () => {
                   name="25"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  25% and above
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    25% and above
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="50"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  50% and above
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    50% and above
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="75"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  75% and above
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    75% and above
+                  </Text>
                 </Checkbox>
                 <Checkbox
                   name="90"
                   onChange={filterCheckBox}
                   colorScheme="pink"
+                  size={{ lg: "md", md: "md", sm: "md", base: "sm" }}
                   mr="10px"
                 >
-                  90% and above
+                  <Text
+                    fontSize={{
+                      lg: "16px",
+                      md: "15px",
+                      sm: "12px",
+                      base: "11px",
+                    }}
+                  >
+                    90% and above
+                  </Text>
                 </Checkbox>
               </Stack>
             </Flex>
@@ -446,16 +720,14 @@ const ProductsCompo = () => {
           borderColor="gray.200"
         >
           {/* Products Grid */}
-          <ProductsGrid
-            data={data}
-          />
+          <ProductsGrid data={data} />
           <Box borderTop="1px" borderColor="gray.200">
             <Flex margin="auto" my="50px" w="fit-content">
               {[...Array(Math.ceil(totalProducts / limit))]
                 .fill(0)
                 .map((el, i) => (
                   <Button
-                    key={i*Math.random()*0.6755}
+                    key={i * Math.random() * 0.6755}
                     _disabled={{ bgColor: "black" }}
                     disabled={page === i + 1}
                     color={page == i + 1 ? "#fff" : ""}

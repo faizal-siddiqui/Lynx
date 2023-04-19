@@ -116,9 +116,12 @@ const AddData = () => {
   const addData = async () => {
     setLoading(true);
     try {
-      const res = await axios.post(`http://localhost:3000/products`, {
-        ...state,
-      });
+      const res = await axios.post(
+        `${process.env.REACT_APP_PRODUCTS}/products`,
+        {
+          ...state,
+        }
+      );
 
       setLoading(false);
       dispatch({ type: "reset" });

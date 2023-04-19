@@ -31,19 +31,27 @@ export default function SignInForm() {
   const [password, setPassword] = useState("");
   const [profileData, setProfileData] = useState([]);
 
+  const [read, setRead] = useState(true);
+
   const [profileDataObj, setProfileDataObj] = useState({});
   const [loading, setLoading] = useState(false);
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
 
-  const ref1 = useRef(null)
-  const ref2 = useRef(null)
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
 
-  const { isAuth, setIsAuth, name, setName } = useContext(AuthContext);
+  const { isAuth, setIsAuth } = useContext(AuthContext);
 
   const { profileId, setProfileId } = useContext(DeliveryContext);
 
-
+  const [updatedDetails, setUpdatedDetails] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    gender: "",
+    location: "",
+  });
   // toast message
   const openToast = (text, status, desc) => {
     toast({
@@ -51,20 +59,72 @@ export default function SignInForm() {
       description: desc,
       status: status,
       isClosable: true,
-      position:'top',
+      position: "top",
     });
   };
 
+  console.log("updatedDetails:", updatedDetails);
+
+  // patch profile
+
+  const patchProfile = () => {
+    const id = JSON.parse(localStorage.getItem("id"));
+
+    if (!id) {
+      return;
+    }
+
+    axios
+      .patch(`${process.env.REACT_APP_PRODUCTS}/profile/${id}`, {
+        ...profileData,
+        ...updatedDetails,
+      })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
+
+  // checking read if read true -> edit otherwise patch the data
+
+  const changeData = (read) => {
+    if (read) {
+      setRead(false);
+      console.log("updatedDetails:", updatedDetails);
+    } else {
+      patchProfile();
+      setRead(true);
+    }
+  };
+
+  // for getting profile
+  const fetchProfile = () => {
+    const id = JSON.parse(localStorage.getItem("id"));
+
+    if (!id) {
+      return;
+    }
+
+    axios
+      .get(`${process.env.REACT_APP_PRODUCTS}/profile?id=${id}`)
+      .then((res) => {
+        setProfileData(res?.data[0]);
+        setUpdatedDetails({
+          name: res?.data[0]?.name,
+          email: res?.data[0]?.email,
+          mobile: res?.data[0]?.mobile,
+          gender: res?.data[0]?.gender,
+          location: res?.data[0]?.location,
+        });
+      })
+      .catch((err) => console.log(err));
+  };
 
   useEffect(() => {
-  
+    fetchProfile();
     return () => {
-      clearTimeout(ref1.current) 
-      clearTimeout(ref2.current) 
-    }
-  }, [])
-  
-  
+      clearTimeout(ref1.current);
+      clearTimeout(ref2.current);
+    };
+  }, []);
 
   // for comparing the website data with the typed data
   const compareData = (data) => {
@@ -74,10 +134,8 @@ export default function SignInForm() {
         setLoading(false);
         setIsAuth(true);
         setProfileId(data[0].id);
-        setProfileData(data[0].location);
-        setName(data[0].name)
-        localStorage.setItem("auth", JSON.stringify(true))
-        localStorage.setItem("name", JSON.stringify(data[0].name))
+        localStorage.setItem("auth", JSON.stringify(true));
+        localStorage.setItem("id", JSON.stringify(data[0].id));
         setEmail("");
         setPassword("");
         navigate("/");
@@ -133,37 +191,121 @@ export default function SignInForm() {
     setProfileData([]);
     setProfileDataObj({});
     openToast("LOGOUT SUCCESSFUL", "success", "");
-    localStorage.setItem("auth", JSON.stringify(false))
-    localStorage.setItem("name", JSON.stringify(""))
+    localStorage.clear();
   };
 
-  const colorMode =  useColorModeValue("white", "gray.700")
+  const colorMode = useColorModeValue("white", "gray.700");
 
   return isAuth ? (
     <Box bgGradient={"linear(to-r, teal.100, pink.200)"} h="100vh">
-
-        <Flex>
-
-            <Box m="auto" mt="100px">
-              <Box>
-                <Text mb="30px" fontSize="20px"  fontWeight="500">Hello! {name}. Want to SignOut?</Text>
-              </Box>
+      <Flex m="auto" p="10px" justify="space-around">
+        <Box>
+          <Text mb="30px" fontSize="20px" fontWeight="500">
+            Hello! {updatedDetails.name}. Want to update your details ?
+          </Text>
+          <Box>
+            <FormControl>
+              <FormLabel>Full name</FormLabel>
+              <Input
+                onChange={(e) =>
+                  setUpdatedDetails({ ...updatedDetails, name: e.target.value })
+                }
+                value={updatedDetails.name}
+                isReadOnly={read}
+                border="none"
+                placeholder="Update name"
+              />
+            </FormControl>
+            <FormControl>
+              <FormLabel>Email</FormLabel>
+              <Input
+                onChange={(e) =>
+                  setUpdatedDetails({
+                    ...updatedDetails,
+                    email: e.target.value,
+                  })
+                }
+                value={updatedDetails.email}
+                isReadOnly={read}
+                border="none"
+                placeholder="Update Email"
+              />
+            </FormControl>
+            <FormControl>
+              <FormLabel>Mobile</FormLabel>
+              <Input
+                onChange={(e) =>
+                  setUpdatedDetails({
+                    ...updatedDetails,
+                    mobile: e.target.value,
+                  })
+                }
+                value={updatedDetails.mobile}
+                isReadOnly={read}
+                border="none"
+                placeholder="Update Mobile"
+              />
+            </FormControl>
+            <FormControl>
+              <FormLabel>Gender</FormLabel>
+              <Input
+                onChange={(e) =>
+                  setUpdatedDetails({
+                    ...updatedDetails,
+                    gender: e.target.value,
+                  })
+                }
+                value={updatedDetails.gender}
+                isReadOnly={read}
+                border="none"
+                placeholder="Update Gender"
+              />
+            </FormControl>
+            <FormControl>
+              <FormLabel>Address</FormLabel>
+              <Input
+                onChange={(e) =>
+                  setUpdatedDetails({
+                    ...updatedDetails,
+                    location: e.target.value,
+                  })
+                }
+                value={updatedDetails.location}
+                isReadOnly={read}
+                border="none"
+                placeholder="Update Address"
+              />
+            </FormControl>
             <Button
-                onClick={() => Logout()}
-                py="20px"
-                pl="90px"
-                pr="90px"
-                bg={"#ff3e6c"}
-                color={"white"}
-                _hover={{
-                    bg:"teal.200",
-                    color: "black"
-                }}
+              mt="15px"
+              w="100%"
+              bg={"teal.200"}
+              color={"black"}
+              _hover={{
+                bg: "#ff3e6c",
+                color: "white",
+              }}
+              onClick={() => changeData(read)}
             >
-                SignOut
+              {read ? "EDIT" : "SUBMIT"}
             </Button>
-            </Box>
-        </Flex>
+          </Box>
+        </Box>
+        <Button
+          onClick={() => Logout()}
+          py="20px"
+          pl="90px"
+          pr="90px"
+          bg={"#ff3e6c"}
+          color={"white"}
+          _hover={{
+            bg: "teal.200",
+            color: "black",
+          }}
+        >
+          SignOut
+        </Button>
+      </Flex>
     </Box>
   ) : (
     <Flex
@@ -185,7 +327,7 @@ export default function SignInForm() {
         </Stack>
         <Box rounded={"lg"} bg={colorMode} boxShadow={"lg"} p={8}>
           <Stack spacing={4}>
-            <FormControl id="email">
+            <FormControl isRequired id="email">
               <FormLabel>Email address</FormLabel>
               <Input
                 isDisabled={loading}
@@ -198,7 +340,7 @@ export default function SignInForm() {
                 placeholder="Enter email"
               />
             </FormControl>
-            <FormControl id="password">
+            <FormControl isRequired id="password">
               <FormLabel>Password</FormLabel>
               <InputGroup size="md">
                 <Input
@@ -239,8 +381,13 @@ export default function SignInForm() {
                 Sign in
               </Button>
               <Flex>
-                <Text mr={"5px"} >Didn't have an Account?</Text>
-                <Link to='/signup'><Text color="blue.400" cursor="pointer"> SignUp</Text></Link>
+                <Text mr={"5px"}>Didn't have an Account?</Text>
+                <Link to="/signup">
+                  <Text color="blue.400" cursor="pointer">
+                    {" "}
+                    SignUp
+                  </Text>
+                </Link>
               </Flex>
             </Stack>
           </Stack>

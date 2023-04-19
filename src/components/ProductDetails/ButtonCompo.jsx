@@ -47,9 +47,9 @@ const ButtonCompo = ({ singleData }) => {
     <Box mt="30px">
       <Button
         onClick={() => addToCart(cart, singleData)}
-        p="25px"
+        p={{ lg: "25px", md: "20px", sm: "19px", base: "16px" }}
         mr="20px"
-        fontSize="17px"
+        fontSize={{ lg: "17px", md: "16px", sm: "15px", base: "13px" }}
         bgColor="#ff3e6c"
         color="#fff"
       >
@@ -63,8 +63,10 @@ const ButtonCompo = ({ singleData }) => {
 
       <RouterLink>
         <Button
-          p="25px"
-          fontSize="17px"
+          mt="10px"
+          p={{ lg: "25px", md: "20px", sm: "19px", base: "16px" }}
+          mr="20px"
+          fontSize={{ lg: "17px", md: "16px", sm: "15px", base: "13px" }}
           bgColor="#fff"
           border="1px"
           borderColor="gray.300"

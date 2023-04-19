@@ -5,11 +5,12 @@ import { useState } from "react";
 import { useRef } from "react";
 const ImageCarausel = ({ images }) => {
   const [imgIndex, setImgIndex] = useState(0);
-  const [carause, setCarause] = useState(false);
   const ref = useRef(null);
 
-  useEffect(() => {
-    setCarause(true);
+  const startCarause = () => {
+    if (ref.current != null) {
+      return;
+    }
     ref.current = setInterval(() => {
       setImgIndex((prev) => {
         if (prev === 2) {
@@ -18,17 +19,33 @@ const ImageCarausel = ({ images }) => {
         return prev + 1;
       });
     }, 1000);
+  };
 
+  const stopCarause = () => {
+    clearInterval(ref.current);
+    ref.current = null;
+    setImgIndex(0)
+  };
+
+  useEffect(() => {
     return () => {
-      clearInterval(ref.current);
-      setCarause(false);
+      stopCarause();
       setImgIndex(0);
     };
   }, []);
 
   return (
     <>
-      <Image src={images[imgIndex]} alt="" />;
+      <Image
+        onMouseOver={() => {
+          startCarause();
+        }}
+        onMouseLeave={() => {
+          stopCarause();
+        }}
+        src={images[imgIndex]}
+        alt=""
+      />
     </>
   );
 };

@@ -11,7 +11,12 @@ const Cart = () => {
       <CartNavbar />
       <Flex
         gap="20px"
-        flexDirection={{ lg: "row", md: "column", sm: "column" }}
+        flexDirection={{
+          lg: "row",
+          md: "column",
+          sm: "column",
+          base: "column",
+        }}
       >
         <Box
           mt="25px"

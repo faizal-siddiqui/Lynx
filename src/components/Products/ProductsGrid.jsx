@@ -21,20 +21,22 @@ import SkeletonCompo from "./SkeletonCompo";
 import { Link as RouterLink, useParams } from "react-router-dom";
 
 const ProductsGrid = ({ data }) => {
-
   const [loading, setLoading] = useState(true);
   const { categ } = useParams();
 
   setTimeout(() => {
-    setLoading(false)
-  },1000)
+    setLoading(false);
+  }, 1000);
 
-  return (
+  return loading ? (
+    <SkeletonCompo />
+  ) : (
     <Grid
       templateColumns={{
         lg: "repeat(4, 1fr)",
         md: "repeat(3, 1fr)",
         sm: "repeat(2, 1fr)",
+        base: "repeat(2, 1fr)",
       }}
       gap={5}
       mr="20px"
@@ -42,16 +44,14 @@ const ProductsGrid = ({ data }) => {
       pt="20px"
       pb="20px"
     >
-      {loading ? (
-        <SkeletonCompo />
-      ) : (
-        data &&
-        data.map((prod, i) => (
-          <RouterLink key={Math.random()*0.65654*Math.random()} to={`/products/${categ}/${prod.id}`}>
-            <SingleProduct key={prod.id} prod={prod} i={i} />
-          </RouterLink>
-        ))
-      )}
+      {data?.map((prod, i) => (
+        <RouterLink
+          key={Math.random() * 0.65654 * Math.random()}
+          to={`/products/${categ}/${prod.id}`}
+        >
+          <SingleProduct key={prod.id} prod={prod} i={i} />
+        </RouterLink>
+      ))}
     </Grid>
   );
 };

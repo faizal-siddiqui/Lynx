@@ -8,26 +8,17 @@ import {
   Collapse,
   Icon,
   Link,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
   Image,
-  Heading,
   Input,
   InputGroup,
   InputLeftElement,
-  InputRightElement,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
-  ChevronRightIcon,
-  PhoneIcon,
-  CheckIcon,
   SearchIcon,
 } from "@chakra-ui/icons";
 import images from "../images/lynx-logo.png";
@@ -80,11 +71,28 @@ export default function Navbar() {
             <Image
               cursor="pointer"
               src={images}
-              w={{ lg: "38%", md: "90%" }}
+              w={{ lg: "38%", md: "90%", sm: "60%", base: "90%" }}
               display={{ lg: "block", md: "block", sm: "none" }}
               alt="logo"
             />
           </RouterLink>
+          {/* ! ADD CART OPTION */}
+          {/* <RouterLink to="/cart">
+            <Button
+              as={"a"}
+              fontSize={"sm"}
+              fontWeight={400}
+              variant={"link"}
+              href={"#"}
+              display={{ lg: "none", md: "none", sm: "none", base: "flex" }}
+              float="inline-end"
+            >
+              <Box fontSize="20px">
+                <BsHandbag />
+                <Text fontSize="13px">Cart</Text>
+              </Box>
+            </Button>
+          </RouterLink> */}
 
           <Flex
             justifyContent="space-evenly"
@@ -108,12 +116,16 @@ export default function Navbar() {
                 pointerEvents="none"
                 children={<SearchIcon color="gray.300" />}
               />
-              <Input w="250px" placeholder="Search for products & brands" />
+              <Input
+                w={{ lg: "250px", md: "220px", sm: "200px", base: "200px" }}
+                placeholder="Search for products & brands"
+              />
             </InputGroup>
           </Stack>
 
           <RouterLink to="/signin">
             <Button
+              display={{ lg: "block", md: "block", sm: "block", base: "none" }}
               as={"a"}
               fontSize={"sm"}
               fontWeight={400}
@@ -127,6 +139,7 @@ export default function Navbar() {
             </Button>
           </RouterLink>
           <Button
+            display={{ lg: "block", md: "block", sm: "block", base: "none" }}
             as={"a"}
             fontSize={"sm"}
             fontWeight={400}
@@ -145,6 +158,7 @@ export default function Navbar() {
               fontWeight={400}
               variant={"link"}
               href={"#"}
+              display={{ lg: "block", md: "block", sm: "block", base: "none" }}
             >
               <Box fontSize="20px">
                 <BsHandbag />
@@ -165,7 +179,6 @@ export default function Navbar() {
 const DesktopNav = () => {
   const linkColor = useColorModeValue("gray.600", "gray.200");
   const linkHoverColor = useColorModeValue("gray.800", "white");
-  const popoverContentBgColor = useColorModeValue("white", "gray.800");
   const [dropdown, setDropdown] = useState(false);
 
   return (
@@ -198,7 +211,8 @@ const DesktopNav = () => {
                 className={styles.dropdown}
                 top="61px"
                 width="90%"
-                height="300px"
+                // height="300px"
+                boxShadow="rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px"
                 left="10"
                 color="#f5f5f6"
                 position="absolute"
@@ -312,14 +326,15 @@ const MobileNav = () => {
       p={4}
       display={{ md: "none" }}
     >
-      {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+      {NAV_ITEMS.map((navItem, index) => (
+        <MobileNavItem key={navItem.label} {...navItem} index={index} />
       ))}
     </Stack>
   );
 };
 
-const MobileNavItem = ({ label, children, href }) => {
+const MobileNavItem = ({ label, children, href, LISTS, index }) => {
+  console.log("LISTS:", LISTS);
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -334,12 +349,14 @@ const MobileNavItem = ({ label, children, href }) => {
           textDecoration: "none",
         }}
       >
-        <Text
-          fontWeight={600}
-          color={useColorModeValue("gray.600", "gray.200")}
-        >
-          {label}
-        </Text>
+        <RouterLink to={`products/${LISTS[index]?.lists[0]}`}>
+          <Text
+            fontWeight={600}
+            color={useColorModeValue("gray.600", "gray.200")}
+          >
+            {label}
+          </Text>
+        </RouterLink>
         {children && (
           <Icon
             as={ChevronDownIcon}
@@ -362,7 +379,11 @@ const MobileNavItem = ({ label, children, href }) => {
         >
           {children &&
             children.map((child) => (
-              <RouterLink key={child.label} py={2} href={child.href}>
+              <RouterLink
+                key={child.label}
+                py={2}
+                to={`products/${LISTS?.lists[0]}`}
+              >
                 {child.label}
               </RouterLink>
             ))}

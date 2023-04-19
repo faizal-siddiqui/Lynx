@@ -72,7 +72,7 @@
       "name": "Men Burgundy Solid Polo Collar T-shirt",
       "rating": {
         "star": 4.5,
-        "count": 1501
+        "count": 1503
       },
       "price": 766,
       "mrp": 1299,
@@ -170,7 +170,7 @@
       "name": "Men Beige & Black Typography Printed Sustainable T-shirt",
       "rating": {
         "star": 4,
-        "count": 12903
+        "count": 12904
       },
       "price": 296,
       "mrp": 1099,
@@ -194,7 +194,9 @@
         "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/12/12/512f9dba-fdc5-4e84-a3bf-a430dc3889821576102551501-5.jpg"
       ],
       "reviews": [
-        "Best Product"
+        "Best Product",
+        "Best Buy",
+        "jhgasdgasgd"
       ],
       "id": 6
     },
@@ -204,7 +206,7 @@
       "name": "Men Black Layered Cotton T-shirt",
       "rating": {
         "star": 4.2,
-        "count": 57000
+        "count": 57001
       },
       "price": 349,
       "mrp": 499,
@@ -227,7 +229,9 @@
         "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2499328/2022/4/18/33032b6e-c05e-4d88-ace5-09f2ba087d661650284870465RoadsterMenBlackLayeredCottonT-shirt3.jpg",
         "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2499328/2022/4/18/f123cd33-67db-45b3-a2cd-be1ad4222d761650284870455RoadsterMenBlackLayeredCottonT-shirt2.jpg"
       ],
-      "reviews": [],
+      "reviews": [
+        "Best Product"
+      ],
       "id": 7
     },
     {
@@ -563,7 +567,7 @@
       "name": "Men White Solid Round Neck Pure Cotton T-shirt",
       "rating": {
         "star": 4.1,
-        "count": 1600
+        "count": 1601
       },
       "price": 395,
       "mrp": 1199,
@@ -586,7 +590,9 @@
         "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/13819100/2021/4/7/74b77cbe-b7ee-4c7c-977a-5b8ff51379131617788592510-Bewakoof-Men-Tshirts-611617788591720-1.jpg",
         "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/13819100/2021/4/7/c1fcaa4c-9e64-4a1a-96cf-721cf29ea23f1617788592477-Bewakoof-Men-Tshirts-611617788591720-3.jpg"
       ],
-      "reviews": [],
+      "reviews": [
+        "Best tshirt"
+      ],
       "id": 18
     },
     {
@@ -1308,10 +1314,77 @@
       "mobile": 7867789867,
       "gender": "Male",
       "birthDate": "23-09-2002",
-      "location": "14 A Sector Near Crios Mall, Delhi",
+      "location": "14 A Sector Near Crios Mall, Delhi India",
       "cardDetails": "89878676565441",
       "password": "Faiz!234",
-      "cart": []
+      "cart": [
+        {
+          "id": 1,
+          "carause": false,
+          "brand": "Allen Solly",
+          "name": "Men Blue Solid Polo Collar Pure Cotton T-shirt",
+          "rating": {
+            "star": 4.4,
+            "count": 569
+          },
+          "price": 399,
+          "mrp": 999,
+          "discount": 60,
+          "sizes": "M",
+          "qty": 1,
+          "category": "tshirts",
+          "type": "men",
+          "productDetails": "Blue solid T-shirt, has a polo collar, and short sleeves",
+          "size": "The model (height 6') is wearing a size M",
+          "material": "100% Cotton",
+          "specification": {
+            "fabric": "Pure Cotton",
+            "fit": "Regular Fit",
+            "length": "Regular",
+            "mainTrend": "New Basics"
+          },
+          "images": [
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/10/3/09814e9d-8388-4857-8f41-a03c9d9698701570086314065-1.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/10/3/9da11bfc-527c-44b2-8a2f-1e5d0cd85e121570086314135-3.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/productimage/2019/10/3/bbdddcfc-4e61-4b2b-ac93-873c94f8235d1570086314170-4.jpg"
+          ],
+          "reviews": [
+            "Best Product"
+          ]
+        },
+        {
+          "carause": false,
+          "brand": "HIGHLANDER",
+          "name": "Men White Navy Slim Fit Round Neck Pure Cotton T-shirt",
+          "rating": {
+            "star": 3.8,
+            "count": 1802
+          },
+          "price": 279,
+          "mrp": 699,
+          "discount": 45,
+          "sizes": "M",
+          "qty": 1,
+          "category": "tshirts",
+          "type": "men",
+          "productDetails": "White and navy blue T-shirt, has a round neck, long raglan sleeves",
+          "size": "Slim fit",
+          "material": "100% cotton",
+          "specification": {
+            "fabric": "Pure Cotton",
+            "fit": "Slim Fit",
+            "length": "Regular",
+            "mainTrend": "Nautical"
+          },
+          "images": [
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1923231/2018/3/27/11522150765599-HIGHLANDER-Men-White--Navy-Slim-Fit-Round-Neck-T-shirt-5801522150765458-5.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1923231/2018/3/27/11522150765620-HIGHLANDER-Men-White--Navy-Slim-Fit-Round-Neck-T-shirt-5801522150765458-4.jpg",
+            "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1923231/2018/3/27/11522150765639-HIGHLANDER-Men-White--Navy-Slim-Fit-Round-Neck-T-shirt-5801522150765458-3.jpg"
+          ],
+          "reviews": [],
+          "id": 2
+        }
+      ]
     },
     {
       "id": 2,
@@ -1365,10 +1438,10 @@
       "email": "ayansidp@gmail.com",
       "password": "Ayan!234",
       "name": "Ayan Siddiqui",
-      "mobile": 0,
-      "gender": "",
+      "mobile": "9889987865",
+      "gender": "Male",
       "birthDate": "",
-      "location": "",
+      "location": "15 A New Colony Agra",
       "cardDetails": "",
       "cart": [],
       "id": 4
@@ -1446,18 +1519,18 @@
       "email": "akash@gmail.com",
       "password": "Akas!234",
       "name": "Akash Kumar",
-      "mobile": 0,
-      "gender": "",
+      "mobile": "8898978788",
+      "gender": "Male",
       "birthDate": "",
-      "location": "",
+      "location": "215 A Carnaught Palace New Delhi India",
       "cardDetails": "",
       "cart": [],
       "id": 8
     },
     {
-      "email": "akash@gmail.com",
-      "password": "Akas!234",
-      "name": "Akash Kumar",
+      "email": "atanu@gmail.com",
+      "password": "Atan!234",
+      "name": "Atanu Kamakar",
       "mobile": 0,
       "gender": "",
       "birthDate": "",
@@ -1465,6 +1538,66 @@
       "cardDetails": "",
       "cart": [],
       "id": 9
+    },
+    {
+      "email": "adnan@gmail.com",
+      "password": "Adnan!234",
+      "name": "Adnan Siddiqui",
+      "mobile": 0,
+      "gender": "",
+      "birthDate": "",
+      "location": "",
+      "cardDetails": "",
+      "cart": [],
+      "id": 10
+    },
+    {
+      "email": "ramesh@gmail.com",
+      "password": "Rame!234",
+      "name": "Ramesh Jha",
+      "mobile": "9878675645",
+      "gender": "Male",
+      "birthDate": "",
+      "location": "14 A sanhitya nagar kanpur, Up",
+      "cardDetails": "",
+      "cart": [],
+      "id": 11
+    },
+    {
+      "email": "faizalsidp@gmail.com",
+      "password": "Faiza@123",
+      "name": "Faizal Siddiqui",
+      "mobile": 0,
+      "gender": "",
+      "birthDate": "",
+      "location": "",
+      "cardDetails": "",
+      "cart": [],
+      "id": 12
+    },
+    {
+      "email": "faizalsidp@gmail.com",
+      "password": "Faizalsidp",
+      "name": "Faizal Siddiqui",
+      "mobile": 0,
+      "gender": "",
+      "birthDate": "",
+      "location": "",
+      "cardDetails": "",
+      "cart": [],
+      "id": 13
+    },
+    {
+      "email": "faizalsid123@gmail.com",
+      "password": "faizal123",
+      "name": "Faizal Siddiqui",
+      "mobile": 0,
+      "gender": "",
+      "birthDate": "",
+      "location": "",
+      "cardDetails": "",
+      "cart": [],
+      "id": 14
     }
   ]
 }
